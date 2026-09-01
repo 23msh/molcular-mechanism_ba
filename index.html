@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>반응 경로 탐색기 — 유기화학 반응 예측</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <span class="mark">C=O</span>
+    <div class="header-text">
+      <h1>반응 경로 탐색기</h1>
+      <p>화합물 하나를 고르면, 그 화합물이 겪을 수 있는 반응과 진행 단계를 보여줍니다.</p>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <section class="panel compound-panel" aria-labelledby="compound-heading">
+    <h2 id="compound-heading">1. 화합물 선택</h2>
+    <div id="compound-list" class="compound-list"></div>
+    <p class="panel-note">지금은 3개의 예시 화합물만 등록되어 있습니다.</p>
+  </section>
+
+  <section class="panel results-panel" aria-labelledby="results-heading">
+    <h2 id="results-heading">2. 가능한 반응</h2>
+    <div id="results-empty" class="empty-state">왼쪽에서 화합물을 먼저 선택하세요.</div>
+    <div id="results-body" class="results-body" hidden>
+      <div class="result-group">
+        <h3 class="group-label group-standalone">단독 반응</h3>
+        <p class="group-desc">시약 없이 화합물 자체 구조만으로 진행됩니다.</p>
+        <ul id="standalone-list" class="reaction-list"></ul>
+      </div>
+      <div class="result-group">
+        <h3 class="group-label group-reagent">시약이 필요한 반응</h3>
+        <p class="group-desc">아래 시약이 있어야 반응이 성립합니다.</p>
+        <ul id="reagent-list" class="reaction-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel mechanism-panel" aria-labelledby="mechanism-heading">
+    <h2 id="mechanism-heading">3. 메커니즘</h2>
+    <div id="mechanism-empty" class="empty-state">반응을 선택하면 단계별 진행 과정이 여기 표시됩니다.</div>
+    <div id="mechanism-body" class="mechanism-body" hidden>
+      <p class="mechanism-title" id="mechanism-title"></p>
+      <ol id="mechanism-steps" class="mechanism-steps"></ol>
+      <p id="mechanism-missing" class="empty-state" hidden>이 반응은 아직 메커니즘 단계가 등록되지 않았습니다. 현재는 알돌 축합 · 탈수 반응 · 카니자로 반응, 3개만 준비되어 있습니다.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>작용기 판별은 지금 단계에서는 미리 정의된 플래그 기반으로 동작합니다. RDKit 연동 시 SMILES 입력에서 자동 판별로 교체될 예정입니다.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
