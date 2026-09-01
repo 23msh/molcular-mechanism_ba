@@ -42,13 +42,6 @@ function reactionRow(rule) {
   return li;
 }
 
-function reasonHeader(text) {
-  const li = document.createElement("li");
-  li.className = "empty-state reason-header";
-  li.textContent = text;
-  return li;
-}
-
 function reasonRow(rule, flags) {
   const li = document.createElement("li");
   li.className = "reason-item";
@@ -74,7 +67,6 @@ function renderResults() {
   const standaloneList = document.getElementById("standalone-list");
   standaloneList.innerHTML = "";
   if (standalone.length === 0) {
-    standaloneList.appendChild(reasonHeader("해당 없음 — 아래는 각 단독 반응이 성립하지 않는 이유입니다."));
     RULES.filter((r) => r.category === "standalone").forEach((r) =>
       standaloneList.appendChild(reasonRow(r, selectedCompound.flags))
     );
