@@ -41,16 +41,6 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
   align-items: center;
   gap: 20px;
 }
-.mark {
-  font-family: var(--font-head);
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--accent-standalone);
-  border: 1.5px solid var(--accent-standalone);
-  border-radius: 8px;
-  padding: 10px 14px;
-  flex-shrink: 0;
-}
 .header-text h1 { font-size: 22px; letter-spacing: -0.01em; }
 .header-text p { margin: 6px 0 0; color: var(--ink-muted); font-size: 14px; max-width: 60ch; }
 
@@ -157,7 +147,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
   padding: 10px 14px;
   border: 2px solid #e28a8a;
   border-radius: 8px;
-  background-color: #ffffff;
+  background-color: #e3f0ec;
 }
 .reason-name {
   display: block;
