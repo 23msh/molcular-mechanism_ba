@@ -42,6 +42,14 @@ function reactionRow(rule) {
   return li;
 }
 
+function reasonRow(rule, flags) {
+  const li = document.createElement("li");
+  li.className = "reason-item";
+  const reasonText = rule.reason ? rule.reason(flags) : "이 화합물의 구조가 조건을 만족하지 않습니다.";
+  li.innerHTML = `<span class="reason-name">${rule.name}</span><span class="reason-text">${reasonText}</span>`;
+  return li;
+}
+
 function renderResults() {
   const empty = document.getElementById("results-empty");
   const body = document.getElementById("results-body");
@@ -59,7 +67,9 @@ function renderResults() {
   const standaloneList = document.getElementById("standalone-list");
   standaloneList.innerHTML = "";
   if (standalone.length === 0) {
-    standaloneList.innerHTML = `<li class="empty-state" style="padding:4px 0">해당 없음</li>`;
+    RULES.filter((r) => r.category === "standalone").forEach((r) =>
+      standaloneList.appendChild(reasonRow(r, selectedCompound.flags))
+    );
   } else {
     standalone.forEach((r) => standaloneList.appendChild(reactionRow(r)));
   }
@@ -99,7 +109,8 @@ function renderMechanism() {
   missingEl.hidden = true;
   steps.forEach((s) => {
     const li = document.createElement("li");
-    li.innerHTML = `<p class="step-title">${s.title}</p><p class="step-desc">${s.desc}</p>`;
+    const diagramHtml = s.diagram ? `<div class="mechanism-diagram">${s.diagram}</div>` : "";
+    li.innerHTML = `<p class="step-title">${s.title}</p>${diagramHtml}<p class="step-desc">${s.desc}</p>`;
     stepsEl.appendChild(li);
   });
 }

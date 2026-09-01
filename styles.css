@@ -10,6 +10,8 @@
   --accent-standalone-bg: #e3f0ec;
   --accent-reagent: #c4530b;
   --accent-reagent-bg: #fbeadd;
+  --mech-magenta: #d6247a;
+  --mech-blue: #2f6fe4;
   --radius: 10px;
   --font-head: "IBM Plex Mono", ui-monospace, monospace;
   --font-body: "IBM Plex Sans KR", "IBM Plex Sans", sans-serif;
@@ -41,17 +43,12 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
   align-items: center;
   gap: 20px;
 }
-.mark {
-  font-family: var(--font-head);
+.header-text h1 {
   font-size: 28px;
-  font-weight: 600;
-  color: var(--accent-standalone);
-  border: 1.5px solid var(--accent-standalone);
-  border-radius: 8px;
-  padding: 10px 14px;
-  flex-shrink: 0;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
-.header-text h1 { font-size: 22px; letter-spacing: -0.01em; }
 .header-text p { margin: 6px 0 0; color: var(--ink-muted); font-size: 14px; max-width: 60ch; }
 
 /* ---------- layout ---------- */
@@ -153,6 +150,27 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
   content: "";
 }
 
+.reason-item {
+  padding: 10px 14px;
+  border: 2px solid #e28a8a;
+  border-radius: 8px;
+  background-color: #e3f0ec;
+}
+.reason-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: line-through;
+  text-decoration-color: #000000;
+  margin-bottom: 3px;
+}
+.reason-text {
+  display: block;
+  font-size: 12.5px;
+  color: #000000;
+}
+
 /* ---------- mechanism ---------- */
 .mechanism-title {
   font-family: var(--font-head);
@@ -186,6 +204,24 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
 }
 .step-title { font-weight: 600; font-size: 14px; margin: 0 0 4px; }
 .step-desc { font-size: 13.5px; color: var(--ink-muted); margin: 0; max-width: 68ch; }
+
+.mechanism-diagram {
+  margin: 8px 0 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.mechanism-diagram svg { display: block; width: 100%; height: auto; max-width: 320px; }
+.mech-bond { stroke: var(--ink); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+.mech-atom { font-family: var(--font-head); font-size: 13px; fill: var(--ink); }
+.mech-charge { font-family: var(--font-head); font-size: 10px; fill: var(--ink); }
+.mech-lone-pair { fill: var(--ink); }
+.mech-label-r { font-family: var(--font-body); font-size: 11px; fill: var(--ink-muted); }
+.mech-arrow { stroke: var(--mech-magenta); stroke-width: 1.8; fill: none; }
+.mech-arrowhead-fill { fill: var(--mech-magenta); }
+.mech-magenta { fill: var(--mech-magenta) !important; }
+.mech-blue { fill: var(--mech-blue) !important; }
 
 /* ---------- footer ---------- */
 .site-footer {
