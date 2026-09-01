@@ -226,84 +226,90 @@ const RULES = [
 // 반응 이름 -> 단계별 [ {title, desc, diagram}, ... ]
 // diagram: 전자이동을 곡선 화살표로 표시하는 인라인 SVG. 화살표 꼬리=전자쌍의 출발(끊어지는 결합/비공유
 // 전자쌍), 화살표 머리=전자쌍의 도착(새로 생기는 결합/전하). 골격은 var(--ink), 화살표는 var(--accent-standalone).
+// 반응 이름 -> 단계별 [ {title, desc, diagram}, ... ]
+// diagram: 전자이동을 곡선 화살표로 표시하는 인라인 SVG. 화살표 꼬리=전자쌍의 출발(끊어지는 결합/비공유
+// 전자쌍), 화살표 머리=전자쌍의 도착(새로 생기는 결합/전하). 골격은 var(--ink), 반응에 직접 관여하는
+// 핵심 산소는 mech-magenta, 들어오는/두 번째 분자는 mech-blue, 화살표는 항상 mech-magenta.
 const MECHANISMS = {
   "알돌 축합 (Aldol condensation)": [
     {
       title: "1단계: 엔올레이트 형성",
       desc: "염기가 카르보닐 알파 탄소의 H를 떼어가고, 그 전자쌍이 알파 탄소-카르보닐 탄소 사이로 이동해 엔올레이트(또는 엔올)를 형성한다.",
-      diagram: `<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="148" y1="74" x2="148" y2="50"/>
-        <line class="mech-bond" x1="153" y1="74" x2="153" y2="50"/>
-        <text class="mech-atom" x="146" y="44">O</text>
-        <line class="mech-bond" x1="143" y1="82" x2="112" y2="96"/>
-        <text class="mech-atom" x="140" y="82">C</text>
-        <text class="mech-atom" x="104" y="100">C</text>
-        <line class="mech-bond" x1="106" y1="90" x2="86" y2="72"/>
-        <text class="mech-atom" x="76" y="66">H</text>
-        <line class="mech-bond" x1="100" y1="104" x2="80" y2="120"/>
-        <text class="mech-label-r" x="66" y="130">R</text>
-        <text class="mech-base" x="46" y="56">B</text>
-        <text class="mech-charge" x="58" y="48">−</text>
-        <path class="mech-arrow" d="M54,58 C66,64 74,66 82,70" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M96,86 C112,80 122,80 132,82" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M155,66 C162,58 160,50 154,46" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 260 145" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="152.2" y1="71" x2="152.2" y2="49"/>
+        <line class="mech-bond" x1="147.8" y1="71" x2="147.8" y2="49"/>
+        <line class="mech-bond" x1="141.8" y1="83.7" x2="114.2" y2="96.3"/>
+        <line class="mech-bond" x1="99.9" y1="93.4" x2="85.4" y2="77.9"/>
+        <line class="mech-bond" x1="99.6" y1="106.4" x2="85.8" y2="120.2"/>
+        <line class="mech-bond" x1="158.6" y1="82.7" x2="175.6" y2="88.1"/>
+        <text class="mech-atom mech-magenta" x="150" y="40" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="150" y="80" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="106" y="100" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="80" y="72" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="78" y="128" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-label-r" x="188" y="92" text-anchor="middle" dominant-baseline="central">R'</text>
+        <text class="mech-atom mech-blue" x="46" y="54" text-anchor="middle" dominant-baseline="central">B</text>
+        <text class="mech-charge mech-blue" x="58" y="44" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <path class="mech-arrow" d="M56,58 C66,63 73,66 79,70" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M96,88 C110,82 120,80 130,80" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M155,68 C163,60 161,50 154,45" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "2단계: 친핵성 공격",
       desc: "엔올레이트의 알파 탄소(친핵체)가 두 번째 카르보닐 분자의 탄소(친전자체)를 공격한다. 카르보닐의 파이 결합 전자쌍은 산소로 이동해 알콕사이드가 된다.",
-      diagram: `<svg viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg">
-        <text class="mech-atom" x="52" y="24">O</text>
-        <text class="mech-charge" x="66" y="18">−</text>
-        <line class="mech-bond" x1="60" y1="30" x2="60" y2="52"/>
-        <text class="mech-atom" x="56" y="60">C</text>
-        <line class="mech-bond" x1="66" y1="58" x2="94" y2="78"/>
-        <line class="mech-bond" x1="68" y1="64" x2="94" y2="83"/>
-        <text class="mech-atom" x="96" y="86">C</text>
-        <line class="mech-bond" x1="102" y1="82" x2="122" y2="88"/>
-        <text class="mech-label-r" x="122" y="94">R</text>
-        <line class="mech-bond" x1="167" y1="56" x2="167" y2="34"/>
-        <line class="mech-bond" x1="172" y1="56" x2="172" y2="34"/>
-        <text class="mech-atom" x="163" y="28">O</text>
-        <text class="mech-atom" x="163" y="66">C</text>
-        <line class="mech-bond" x1="180" y1="62" x2="200" y2="72"/>
-        <text class="mech-label-r" x="200" y="80">R'</text>
-        <path class="mech-arrow" d="M100,80 C130,70 150,66 162,64" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M174,50 C182,42 180,34 174,30" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="58" y1="33" x2="58" y2="49"/>
+        <line class="mech-bond" x1="89.6" y1="75.3" x2="66.8" y2="60.9"/>
+        <line class="mech-bond" x1="87.2" y1="79.1" x2="64.4" y2="64.7"/>
+        <line class="mech-bond" x1="103.9" y1="86.3" x2="112.3" y2="90.8"/>
+        <line class="mech-bond" x1="174.2" y1="51" x2="174.2" y2="35"/>
+        <line class="mech-bond" x1="169.8" y1="51" x2="169.8" y2="35"/>
+        <line class="mech-bond" x1="179.8" y1="64.4" x2="192.7" y2="71.6"/>
+        <text class="mech-atom mech-magenta" x="58" y="24" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="72" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="58" y="58" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="96" y="82" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-label-r" x="122" y="96" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-atom mech-blue" x="172" y="60" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-blue" x="172" y="26" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-label-r" x="204" y="78" text-anchor="middle" dominant-baseline="central">R'</text>
+        <path class="mech-arrow" d="M104,78 C132,68 150,63 161,60" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M177,50 C185,42 183,33 176,28" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "3단계: 양성자화",
       desc: "알콕사이드 산소가 양성자를 받아 β-히드록시 카르보닐 화합물(알돌)이 완성된다.",
-      diagram: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
-        <text class="mech-atom" x="62" y="30">O</text>
-        <text class="mech-charge" x="76" y="24">−</text>
-        <line class="mech-bond" x1="70" y1="36" x2="70" y2="58"/>
-        <text class="mech-atom" x="66" y="66">C</text>
-        <text class="mech-atom" x="120" y="26">H</text>
-        <text class="mech-charge" x="132" y="20">+</text>
-        <path class="mech-arrow" d="M76,28 C96,20 108,20 116,24" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="66" y1="41" x2="66" y2="59"/>
+        <text class="mech-atom mech-magenta" x="66" y="32" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="80" y="22" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="66" y="68" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-blue" x="126" y="26" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-charge mech-blue" x="138" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <path class="mech-arrow" d="M76,26 C96,18 108,18 118,23" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "4단계(선택적 탈수): E1cb 제거",
       desc: "산 또는 염기 조건에서 β-수소와 히드록시기가 빠지며 공액된 α,β-불포화 카르보닐(엔온)로 탈수된다.",
-      diagram: `<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
-        <text class="mech-atom" x="96" y="24">O</text>
-        <text class="mech-atom" x="80" y="14">H</text>
-        <line class="mech-bond" x1="90" y1="20" x2="82" y2="16"/>
-        <line class="mech-bond" x1="100" y1="30" x2="100" y2="50"/>
-        <text class="mech-atom" x="96" y="58">C</text>
-        <line class="mech-bond" x1="108" y1="56" x2="136" y2="68"/>
-        <text class="mech-atom" x="136" y="72">C</text>
-        <line class="mech-bond" x1="142" y1="66" x2="154" y2="48"/>
-        <text class="mech-atom" x="154" y="44">H</text>
-        <line class="mech-bond" x1="90" y1="62" x2="65" y2="80"/>
-        <text class="mech-label-r" x="50" y="90">R</text>
-        <line class="mech-bond" x1="144" y1="74" x2="168" y2="86"/>
-        <text class="mech-label-r" x="168" y="94">C(=O)R'</text>
-        <path class="mech-arrow" d="M148,46 C132,50 122,58 114,64" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M100,44 C108,36 104,28 98,24" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="90" y1="18" x2="85.2" y2="15.6"/>
+        <line class="mech-bond" x1="98" y1="47" x2="98" y2="31"/>
+        <line class="mech-bond" x1="106.4" y1="59.2" x2="131.6" y2="68.8"/>
+        <line class="mech-bond" x1="145" y1="64.5" x2="151.6" y2="54.7"/>
+        <line class="mech-bond" x1="90.9" y1="61.5" x2="72.7" y2="75.3"/>
+        <line class="mech-bond" x1="147.9" y1="76.4" x2="141" y2="72.6"/>
+        <text class="mech-atom mech-magenta" x="98" y="22" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="78" y="12" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-atom" x="98" y="56" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="140" y="72" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="156" y="48" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="64" y="82" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-label-r" x="182" y="92" text-anchor="start" dominant-baseline="central">C(=O)R'</text>
+        <path class="mech-arrow" d="M150,52 C134,54 122,60 113,66" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M98,46 C106,38 102,29 96,24" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
   ],
@@ -312,56 +318,56 @@ const MECHANISMS = {
       title: "1단계: 산 촉매에 의한 양성자화",
       desc: "산 촉매(H+)가 알코올의 산소에 양성자를 제공해 물이 떠나기 좋은 이탈기(-OH2+)로 바뀐다.",
       diagram: `<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="95" y1="70" x2="95" y2="48"/>
-        <line class="mech-bond" x1="91" y1="41" x2="74" y2="26"/>
-        <line class="mech-bond" x1="90" y1="79" x2="62" y2="99"/>
-        <line class="mech-bond" x1="100" y1="79" x2="128" y2="99"/>
-        <text class="mech-atom" x="90" y="80">C</text>
-        <text class="mech-atom" x="88" y="40">O</text>
-        <text class="mech-atom" x="66" y="24">H</text>
-        <text class="mech-label-r" x="46" y="112">R</text>
-        <text class="mech-label-r" x="126" y="112">R'</text>
-        <circle class="mech-lone-pair" cx="106" cy="30" r="1.6"/>
-        <circle class="mech-lone-pair" cx="111" cy="35" r="1.6"/>
-        <text class="mech-atom" x="172" y="24">H</text>
-        <text class="mech-charge" x="184" y="16">+</text>
-        <path class="mech-arrow" d="M110,33 C135,14 155,14 168,22" marker-end="url(#mech-arrow-head)"/>
+        <line class="mech-bond" x1="95" y1="69" x2="95" y2="54"/>
+        <line class="mech-bond" x1="88.2" y1="39.1" x2="78" y2="30.2"/>
+        <line class="mech-bond" x1="87.5" y1="82.9" x2="64.2" y2="98"/>
+        <line class="mech-bond" x1="102.6" y1="82.8" x2="125" y2="97"/>
+        <text class="mech-atom" x="95" y="78" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="95" y="45" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="72" y="25" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="55" y="104" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-label-r" x="136" y="104" text-anchor="middle" dominant-baseline="central">R'</text>
+        <circle class="mech-lone-pair" cx="105" cy="34" r="1.6"/>
+        <circle class="mech-lone-pair" cx="111" cy="39" r="1.6"/>
+        <text class="mech-atom mech-blue" x="178" y="24" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-charge mech-blue" x="190" y="16" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <path class="mech-arrow" d="M110,34 C133,17 155,15 170,22" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "2단계: 물 이탈 (카르보카티온 형성)",
       desc: "C-O 결합의 전자쌍이 산소 쪽으로 이동하며 물이 이탈하고, 탄소는 카르보카티온이 된다.",
-      diagram: `<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="90" y1="70" x2="90" y2="48"/>
-        <line class="mech-bond" x1="86" y1="41" x2="70" y2="27"/>
-        <line class="mech-bond" x1="94" y1="41" x2="110" y2="25"/>
-        <line class="mech-bond" x1="86" y1="79" x2="58" y2="99"/>
-        <line class="mech-bond" x1="96" y1="79" x2="124" y2="99"/>
-        <text class="mech-atom" x="86" y="80">C</text>
-        <text class="mech-atom" x="84" y="40">O</text>
-        <text class="mech-charge" x="98" y="34">+</text>
-        <text class="mech-atom" x="62" y="25">H</text>
-        <text class="mech-atom" x="112" y="23">H</text>
-        <text class="mech-label-r" x="42" y="112">R</text>
-        <text class="mech-label-r" x="122" y="112">R'</text>
-        <path class="mech-arrow" d="M90,62 C104,52 100,44 92,40" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="90" y1="69" x2="90" y2="53"/>
+        <line class="mech-bond" x1="82.8" y1="38.6" x2="72.4" y2="30.8"/>
+        <line class="mech-bond" x1="96.9" y1="38.2" x2="107.9" y2="29.1"/>
+        <line class="mech-bond" x1="82.5" y1="82.9" x2="59.2" y2="98"/>
+        <line class="mech-bond" x1="97.5" y1="82.9" x2="119.1" y2="96.9"/>
+        <text class="mech-atom" x="90" y="78" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="90" y="44" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge" x="101" y="34" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <text class="mech-atom" x="66" y="26" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-atom" x="114" y="24" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="50" y="104" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-label-r" x="130" y="104" text-anchor="middle" dominant-baseline="central">R'</text>
+        <path class="mech-arrow" d="M90,66 C102,55 98,46 91,42" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "3단계: 베타 수소 제거 (E1)",
       desc: "인접 탄소(베타 탄소)의 C-H 결합 전자쌍이 카르보카티온 쪽으로 이동하며 파이 결합(C=C)이 형성되고, 수소는 양성자로 떨어져 나간다.",
-      diagram: `<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="95" y1="75" x2="132" y2="86"/>
-        <line class="mech-bond" x1="136" y1="83" x2="148" y2="64"/>
-        <line class="mech-bond" x1="86" y1="70" x2="58" y2="90"/>
-        <line class="mech-bond" x1="140" y1="90" x2="168" y2="102"/>
-        <text class="mech-atom" x="86" y="76">C</text>
-        <text class="mech-charge" x="98" y="66">+</text>
-        <text class="mech-atom" x="132" y="90">C</text>
-        <text class="mech-atom" x="150" y="62">H</text>
-        <text class="mech-label-r" x="42" y="100">R</text>
-        <text class="mech-label-r" x="168" y="112">R'</text>
-        <path class="mech-arrow" d="M144,68 C130,66 118,72 110,78" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="98.6" y1="77.7" x2="129.4" y2="87.3"/>
+        <line class="mech-bond" x1="142.5" y1="82.2" x2="148" y2="72.9"/>
+        <line class="mech-bond" x1="81.8" y1="78.7" x2="62" y2="87.5"/>
+        <line class="mech-bond" x1="146" y1="94" x2="158.4" y2="100.2"/>
+        <text class="mech-atom" x="90" y="75" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-charge" x="101" y="65" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <text class="mech-atom" x="138" y="90" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="152" y="66" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="52" y="92" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-label-r" x="170" y="106" text-anchor="middle" dominant-baseline="central">R'</text>
+        <path class="mech-arrow" d="M147,69 C132,68 120,72 111,78" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
   ],
@@ -369,63 +375,66 @@ const MECHANISMS = {
     {
       title: "1단계: 수산화물 이온의 친핵성 공격",
       desc: "OH-가 알파 수소가 없는 알데히드의 카르보닐 탄소를 공격해 사면체 중간체(알콕사이드)를 형성한다.",
-      diagram: `<svg viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="107" y1="64" x2="107" y2="42"/>
-        <line class="mech-bond" x1="113" y1="64" x2="113" y2="42"/>
-        <text class="mech-atom" x="104" y="36">O</text>
-        <text class="mech-atom" x="104" y="76">C</text>
-        <line class="mech-bond" x1="100" y1="80" x2="86" y2="94"/>
-        <text class="mech-atom" x="78" y="100">H</text>
-        <line class="mech-bond" x1="116" y1="78" x2="138" y2="92"/>
-        <text class="mech-label-r" x="138" y="100">R</text>
-        <text class="mech-atom" x="42" y="88">O</text>
-        <text class="mech-atom" x="54" y="88">H</text>
-        <text class="mech-charge" x="66" y="80">−</text>
-        <path class="mech-arrow" d="M58,84 C74,80 88,78 98,76" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M111,60 C118,52 116,44 110,40" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="118.2" y1="67" x2="118.2" y2="47"/>
+        <line class="mech-bond" x1="113.8" y1="67" x2="113.8" y2="47"/>
+        <line class="mech-bond" x1="109.6" y1="82.4" x2="99.7" y2="92.3"/>
+        <line class="mech-bond" x1="123.4" y1="81.1" x2="138.9" y2="91.8"/>
+        <line class="mech-bond" x1="32.2" y1="87.5" x2="22.9" y2="82"/>
+        <text class="mech-atom mech-magenta" x="116" y="38" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="116" y="76" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="94" y="98" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="148" y="98" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-atom mech-blue" x="40" y="92" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-blue" x="34" y="70" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom mech-blue" x="16" y="78" text-anchor="middle" dominant-baseline="central">H</text>
+        <path class="mech-arrow" d="M54,86 C72,82 88,80 102,77" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M119,64 C126,55 124,45 117,40" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "2단계: 수소화물 이동(Hydride transfer)",
       desc: "이 중간체의 C-H 결합 전자쌍(수소화물)이 두 번째 알데히드 분자의 카르보닐 탄소로 이동한다.",
-      diagram: `<svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg">
-        <text class="mech-atom" x="64" y="34">O</text>
-        <text class="mech-charge" x="78" y="28">−</text>
-        <line class="mech-bond" x1="70" y1="40" x2="70" y2="62"/>
-        <text class="mech-atom" x="66" y="70">C</text>
-        <line class="mech-bond" x1="63" y1="76" x2="46" y2="90"/>
-        <text class="mech-atom" x="36" y="96">O</text>
-        <text class="mech-atom" x="24" y="96">H</text>
-        <line class="mech-bond" x1="63" y1="80" x2="52" y2="100"/>
-        <text class="mech-label-r" x="42" y="112">R</text>
-        <line class="mech-bond" x1="78" y1="68" x2="92" y2="58"/>
-        <text class="mech-atom" x="94" y="54">H</text>
-        <line class="mech-bond" x1="187" y1="64" x2="187" y2="42"/>
-        <line class="mech-bond" x1="193" y1="64" x2="193" y2="42"/>
-        <text class="mech-atom" x="184" y="36">O</text>
-        <text class="mech-atom" x="184" y="76">C</text>
-        <line class="mech-bond" x1="180" y1="80" x2="166" y2="92"/>
-        <text class="mech-atom" x="156" y="98">H</text>
-        <line class="mech-bond" x1="196" y1="78" x2="214" y2="92"/>
-        <text class="mech-label-r" x="214" y="100">R'</text>
-        <path class="mech-arrow" d="M68,44 C60,52 62,58 68,62" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M96,56 C130,42 160,46 180,62" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M191,58 C198,50 196,42 190,38" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="74" y1="73" x2="74" y2="53"/>
+        <text class="mech-charge mech-magenta" x="56" y="28" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <line class="mech-bond" x1="66.3" y1="86.7" x2="39.7" y2="103.3"/>
+        <line class="mech-bond" x1="24.5" y1="113" x2="14.7" y2="119.6"/>
+        <line class="mech-bond" x1="74" y1="91" x2="74" y2="119"/>
+        <line class="mech-bond" x1="81.8" y1="77.5" x2="105.1" y2="64"/>
+        <line class="mech-bond" x1="216.2" y1="77" x2="216.2" y2="59"/>
+        <line class="mech-bond" x1="211.8" y1="77" x2="211.8" y2="59"/>
+        <line class="mech-bond" x1="207.4" y1="92.1" x2="193.9" y2="104.6"/>
+        <line class="mech-bond" x1="221" y1="91.6" x2="233.8" y2="101.9"/>
+        <text class="mech-atom mech-magenta" x="74" y="44" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="74" y="82" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="32" y="108" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="8" y="124" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="74" y="130" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-atom" x="112" y="60" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-atom mech-blue" x="214" y="86" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-blue" x="214" y="50" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="188" y="110" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="244" y="110" text-anchor="middle" dominant-baseline="central">R'</text>
+        <path class="mech-arrow" d="M66,36 C56,44 58,52 66,58" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M119,57 C150,42 180,48 202,80" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M217,74 C224,65 222,55 215,51" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "3단계: 산화-환원 완결",
       desc: "수소화물을 받은 분자는 알콕사이드(→알코올)로 환원되고, 수소화물을 내준 분자는 카르복실산으로 산화된다.",
-      diagram: `<svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg">
-        <text class="mech-atom" x="70" y="30">O</text>
-        <text class="mech-charge" x="84" y="24">−</text>
-        <line class="mech-bond" x1="78" y1="36" x2="78" y2="58"/>
-        <text class="mech-atom" x="74" y="66">C</text>
-        <text class="mech-label-r" x="52" y="86">→ 알코올</text>
-        <text class="mech-atom" x="140" y="26">H</text>
-        <text class="mech-charge" x="152" y="20">+</text>
-        <path class="mech-arrow" d="M84,28 C104,20 118,20 136,24" marker-end="url(#mech-arrow-head)"/>
-        <text class="mech-label-r" x="160" y="66">다른 분자는 이미 카르복실산으로 산화됨</text>
+      diagram: `<svg viewBox="0 0 260 100" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="72" y1="39" x2="72" y2="55"/>
+        <text class="mech-atom mech-magenta" x="72" y="30" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="86" y="20" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="72" y="64" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-label-r" x="52" y="80" text-anchor="middle" dominant-baseline="central">→ 알코올</text>
+        <text class="mech-atom mech-blue" x="132" y="24" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-charge mech-blue" x="144" y="16" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <path class="mech-arrow" d="M82,24 C102,17 114,17 124,22" marker-end="url(#mech-arrow-head)"/>
+        <text class="mech-label-r" x="158" y="58" text-anchor="start" dominant-baseline="central">다른 분자는 이미</text>
+        <text class="mech-label-r" x="158" y="74" text-anchor="start" dominant-baseline="central">카르복실산으로 산화됨</text>
       </svg>`,
     },
   ],

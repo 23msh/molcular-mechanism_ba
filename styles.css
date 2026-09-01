@@ -10,6 +10,8 @@
   --accent-standalone-bg: #e3f0ec;
   --accent-reagent: #c4530b;
   --accent-reagent-bg: #fbeadd;
+  --mech-magenta: #d6247a;
+  --mech-blue: #2f6fe4;
   --radius: 10px;
   --font-head: "IBM Plex Mono", ui-monospace, monospace;
   --font-body: "IBM Plex Sans KR", "IBM Plex Sans", sans-serif;
@@ -216,9 +218,10 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
 .mech-charge { font-family: var(--font-head); font-size: 10px; fill: var(--ink); }
 .mech-lone-pair { fill: var(--ink); }
 .mech-label-r { font-family: var(--font-body); font-size: 11px; fill: var(--ink-muted); }
-.mech-base { font-family: var(--font-body); font-size: 11px; fill: var(--accent-reagent); }
-.mech-arrow { stroke: var(--accent-standalone); stroke-width: 1.8; fill: none; }
-.mech-arrowhead-fill { fill: var(--accent-standalone); }
+.mech-arrow { stroke: var(--mech-magenta); stroke-width: 1.8; fill: none; }
+.mech-arrowhead-fill { fill: var(--mech-magenta); }
+.mech-magenta { fill: var(--mech-magenta) !important; }
+.mech-blue { fill: var(--mech-blue) !important; }
 
 /* ---------- footer ---------- */
 .site-footer {
