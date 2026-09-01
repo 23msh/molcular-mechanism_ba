@@ -109,7 +109,8 @@ function renderMechanism() {
   missingEl.hidden = true;
   steps.forEach((s) => {
     const li = document.createElement("li");
-    li.innerHTML = `<p class="step-title">${s.title}</p><p class="step-desc">${s.desc}</p>`;
+    const diagramHtml = s.diagram ? `<div class="mechanism-diagram">${s.diagram}</div>` : "";
+    li.innerHTML = `<p class="step-title">${s.title}</p>${diagramHtml}<p class="step-desc">${s.desc}</p>`;
     stepsEl.appendChild(li);
   });
 }

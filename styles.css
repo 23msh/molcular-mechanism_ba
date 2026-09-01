@@ -203,6 +203,23 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
 .step-title { font-weight: 600; font-size: 14px; margin: 0 0 4px; }
 .step-desc { font-size: 13.5px; color: var(--ink-muted); margin: 0; max-width: 68ch; }
 
+.mechanism-diagram {
+  margin: 8px 0 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.mechanism-diagram svg { display: block; width: 100%; height: auto; max-width: 320px; }
+.mech-bond { stroke: var(--ink); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+.mech-atom { font-family: var(--font-head); font-size: 13px; fill: var(--ink); }
+.mech-charge { font-family: var(--font-head); font-size: 10px; fill: var(--ink); }
+.mech-lone-pair { fill: var(--ink); }
+.mech-label-r { font-family: var(--font-body); font-size: 11px; fill: var(--ink-muted); }
+.mech-base { font-family: var(--font-body); font-size: 11px; fill: var(--accent-reagent); }
+.mech-arrow { stroke: var(--accent-standalone); stroke-width: 1.8; fill: none; }
+.mech-arrowhead-fill { fill: var(--accent-standalone); }
+
 /* ---------- footer ---------- */
 .site-footer {
   max-width: 1080px;
