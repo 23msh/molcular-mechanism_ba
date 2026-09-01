@@ -42,6 +42,21 @@ function reactionRow(rule) {
   return li;
 }
 
+function reasonHeader(text) {
+  const li = document.createElement("li");
+  li.className = "empty-state reason-header";
+  li.textContent = text;
+  return li;
+}
+
+function reasonRow(rule, flags) {
+  const li = document.createElement("li");
+  li.className = "reason-item";
+  const reasonText = rule.reason ? rule.reason(flags) : "이 화합물의 구조가 조건을 만족하지 않습니다.";
+  li.innerHTML = `<span class="reason-name">${rule.name}</span><span class="reason-text">${reasonText}</span>`;
+  return li;
+}
+
 function renderResults() {
   const empty = document.getElementById("results-empty");
   const body = document.getElementById("results-body");
@@ -59,7 +74,10 @@ function renderResults() {
   const standaloneList = document.getElementById("standalone-list");
   standaloneList.innerHTML = "";
   if (standalone.length === 0) {
-    standaloneList.innerHTML = `<li class="empty-state" style="padding:4px 0">해당 없음</li>`;
+    standaloneList.appendChild(reasonHeader("해당 없음 — 아래는 각 단독 반응이 성립하지 않는 이유입니다."));
+    RULES.filter((r) => r.category === "standalone").forEach((r) =>
+      standaloneList.appendChild(reasonRow(r, selectedCompound.flags))
+    );
   } else {
     standalone.forEach((r) => standaloneList.appendChild(reactionRow(r)));
   }

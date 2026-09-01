@@ -33,6 +33,7 @@ const RULES = [
     condition: (f) => f.alcohol_1 || f.alcohol_2 || f.alcohol_3,
     product: "알켄 + H2O",
     note: "산 촉매는 있으나 소모되지 않으므로 단독으로 분류",
+    reason: (f) => "알코올(-OH)기가 없어, 산 촉매가 있어도 물로 이탈할 자리가 없습니다.",
   },
   {
     name: "탈수소화 (Dehydrogenation)",
@@ -41,6 +42,7 @@ const RULES = [
     condition: (f) => f.alcohol_1 || f.alcohol_2 || f.alkane_adjacent_H,
     product: "알켄/카르보닐 + H2",
     note: "촉매(Pt/Pd) 필요하지만 소모성 시약이 아님",
+    reason: (f) => "알코올(-OH)이나 탈수소화될 수 있는 인접 C-H 구조가 없어, 촉매(Pt/Pd)가 있어도 H2로 떨어져 나갈 수소 쌍이 없습니다.",
   },
   {
     name: "알돌 축합 (Aldol condensation)",
@@ -49,6 +51,10 @@ const RULES = [
     condition: (f) => (f.aldehyde || f.ketone) && f.alpha_H,
     product: "β-히드록시 카르보닐 → (탈수) α,β-불포화 카르보닐",
     note: "같은 분자 두 개가 반응하는 자기축합",
+    reason: (f) => {
+      if (!f.aldehyde && !f.ketone) return "카르보닐기(알데히드/케톤)가 없어 엔올(레이트)을 형성할 수 없습니다.";
+      return "카르보닐기는 있으나 알파 탄소에 수소가 없어 엔올레이트를 형성할 수 없습니다.";
+    },
   },
   {
     name: "클라이젠 축합 (Claisen condensation)",
@@ -57,6 +63,10 @@ const RULES = [
     condition: (f) => f.ester && f.alpha_H,
     product: "β-케토에스테르",
     note: "자기축합",
+    reason: (f) => {
+      if (!f.ester) return "에스테르기가 없어 클라이젠 축합이 일어날 수 없습니다.";
+      return "에스테르는 있으나 알파 탄소에 수소가 없어 엔올레이트를 형성할 수 없습니다.";
+    },
   },
   {
     name: "카니자로 반응 (Cannizzaro)",
@@ -65,6 +75,10 @@ const RULES = [
     condition: (f) => f.aldehyde && !f.alpha_H,
     product: "카르복실산 + 알코올 (자기 산화-환원)",
     note: "알파 수소가 없는 알데히드에서만 성립",
+    reason: (f) => {
+      if (!f.aldehyde) return "알데히드기가 없어 카니자로 반응이 일어날 수 없습니다.";
+      return "알데히드는 있으나 알파 수소가 존재해, 자기 산화-환원 대신 알돌 축합이 우세합니다.";
+    },
   },
   {
     name: "탈카르복실화 (Decarboxylation)",
@@ -73,6 +87,7 @@ const RULES = [
     condition: (f) => f.carboxylic_acid,
     product: "CO2 이탈 후 알칸/알켄",
     note: "",
+    reason: (f) => "카르복실산(-COOH)기가 없어 CO2로 떨어져 나갈 자리가 없습니다.",
   },
   {
     name: "분자내 고리화 (Intramolecular cyclization)",
@@ -81,6 +96,13 @@ const RULES = [
     condition: (f) => (f.alcohol_1 || f.alcohol_2 || f.alcohol_3) && (f.carboxylic_acid || f.ester),
     product: "락톤(고리형 에스테르)",
     note: "OH와 COOH/에스테르가 같은 분자 내 존재해야 함",
+    reason: (f) => {
+      const hasOH = f.alcohol_1 || f.alcohol_2 || f.alcohol_3;
+      const hasAcidOrEster = f.carboxylic_acid || f.ester;
+      if (!hasOH && !hasAcidOrEster) return "-OH기와 -COOH/에스테르기가 모두 없어 락톤을 형성할 수 없습니다.";
+      if (!hasOH) return "-OH기가 없어 분자 내 고리화(락톤 형성)가 일어날 수 없습니다.";
+      return "-COOH 또는 에스테르기가 없어 분자 내 고리화(락톤 형성)가 일어날 수 없습니다.";
+    },
   },
   {
     name: "베크만 전위 (Beckmann rearrangement)",
@@ -89,6 +111,7 @@ const RULES = [
     condition: (f) => f.oxime,
     product: "아마이드 (고리 확장 시 락탐)",
     note: "",
+    reason: (f) => "옥심(C=N-OH) 작용기가 없어 베크만 전위가 일어날 수 없습니다.",
   },
   {
     name: "호프만 분해 (Hofmann elimination)",
@@ -97,6 +120,7 @@ const RULES = [
     condition: (f) => f.quaternary_ammonium,
     product: "알켄 + 3차 아민",
     note: "",
+    reason: (f) => "4차 암모늄 작용기가 없어 호프만 분해가 일어날 수 없습니다.",
   },
   {
     name: "피나콜 재배열 (Pinacol rearrangement)",
@@ -105,6 +129,7 @@ const RULES = [
     condition: (f) => f.vicinal_diol,
     product: "케톤 (골격 재배열)",
     note: "",
+    reason: (f) => "서로 인접한 두 개의 -OH(비시날 디올) 구조가 없어 피나콜 재배열이 일어날 수 없습니다.",
   },
 
   // ===== 시약이 필요한 반응 =====

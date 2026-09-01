@@ -153,6 +153,31 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
   content: "";
 }
 
+.reason-header {
+  padding: 0 0 8px;
+  font-size: 13px;
+}
+.reason-item {
+  padding: 10px 14px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+.reason-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--border-strong);
+  margin-bottom: 3px;
+}
+.reason-text {
+  display: block;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
 /* ---------- mechanism ---------- */
 .mechanism-title {
   font-family: var(--font-head);
