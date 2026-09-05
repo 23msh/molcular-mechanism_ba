@@ -302,7 +302,7 @@ const MECHANISMS = {
       diagram: `<svg viewBox="150 15 190 115" xmlns="http://www.w3.org/2000/svg">
         <line class="mech-bond" x1="220" y1="54" x2="220" y2="81"/>
         <line class="mech-bond" x1="212.3" y1="94.6" x2="190" y2="107.8"/>
-        <line class="mech-bond" x1="227.7" y1="94.6" x2="210.4" y2="84.3"/>
+        <line class="mech-bond" x1="228" y1="94.2" x2="260.9" y2="111.3"/>
         <text class="mech-atom mech-magenta" x="220" y="45" text-anchor="middle" dominant-baseline="central">O</text>
         <text class="mech-charge mech-magenta" x="204" y="32" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="220" y="90" text-anchor="middle" dominant-baseline="central">C</text>
