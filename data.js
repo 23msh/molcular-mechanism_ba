@@ -327,8 +327,8 @@ const MECHANISMS = {
         <text class="mech-atom" x="72" y="25" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="55" y="104" text-anchor="middle" dominant-baseline="central">R</text>
         <text class="mech-label-r" x="136" y="104" text-anchor="middle" dominant-baseline="central">R'</text>
-        <circle class="mech-lone-pair" cx="105" cy="34" r="1.6"/>
-        <circle class="mech-lone-pair" cx="111" cy="39" r="1.6"/>
+        <circle class="mech-lone-pair" cx="99.2" cy="38.7" r="1.6"/>
+        <circle class="mech-lone-pair" cx="103.1" cy="43.6" r="1.6"/>
         <text class="mech-atom mech-blue" x="178" y="24" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-charge mech-blue" x="190" y="16" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
         <path class="mech-arrow" d="M110,34 C133,17 155,15 170,22" marker-end="url(#mech-arrow-head)"/>
