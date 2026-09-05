@@ -232,99 +232,106 @@ const MECHANISMS = {
   "알돌 축합 (Aldol condensation)": [
     {
       title: "1단계: 엔올레이트 형성",
-      desc: "염기가 카르보닐 알파 탄소의 H를 떼어가고, 그 전자쌍이 알파 탄소-카르보닐 탄소 사이로 이동해 엔올레이트(또는 엔올)를 형성한다.",
-      diagram: `<svg viewBox="0 0 260 145" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="152.2" y1="71" x2="152.2" y2="49"/>
-        <line class="mech-bond" x1="147.8" y1="71" x2="147.8" y2="49"/>
-        <line class="mech-bond" x1="141.8" y1="83.7" x2="114.2" y2="96.3"/>
-        <line class="mech-bond" x1="99.9" y1="93.4" x2="85.4" y2="77.9"/>
-        <line class="mech-bond" x1="99.6" y1="106.4" x2="85.8" y2="120.2"/>
-        <line class="mech-bond" x1="158.6" y1="82.7" x2="175.6" y2="88.1"/>
-        <text class="mech-atom mech-magenta" x="150" y="40" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-atom" x="150" y="80" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="106" y="100" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="80" y="72" text-anchor="middle" dominant-baseline="central">H</text>
-        <text class="mech-label-r" x="78" y="128" text-anchor="middle" dominant-baseline="central">R</text>
-        <text class="mech-label-r" x="188" y="92" text-anchor="middle" dominant-baseline="central">R'</text>
-        <text class="mech-atom mech-blue" x="46" y="54" text-anchor="middle" dominant-baseline="central">B</text>
-        <text class="mech-charge mech-blue" x="58" y="44" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <path class="mech-arrow" d="M58.4,60.6 C62,63 65,64.5 68.5,65.9" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M92.8,95.2 C105,90 118,88 130,89" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M159,63 C170,52 168,36 156,26" marker-end="url(#mech-arrow-head)"/>
+      desc: "실제 반응: 아세톤과 벤즈알데히드의 클라이젠-슈미트 축합(Claisen–Schmidt condensation). 염기(OH⁻)가 아세톤의 알파 탄소에서 H를 떼어가고, 그 전자쌍이 알파 탄소-카르보닐 탄소 사이로 이동해 엔올레이트를 형성한다.",
+      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="302.2" y1="91" x2="302.2" y2="64"/>
+        <line class="mech-bond" x1="297.8" y1="91" x2="297.8" y2="64"/>
+        <line class="mech-bond" x1="292.1" y1="104.3" x2="252.9" y2="125.7"/>
+        <line class="mech-bond" x1="238.2" y1="124.1" x2="211" y2="100.3"/>
+        <line class="mech-bond" x1="307.9" y1="104.3" x2="341" y2="122.3"/>
+        <line class="mech-bond" x1="122.6" y1="69.9" x2="114.6" y2="64.5"/>
+        <text class="mech-atom mech-magenta" x="300" y="55" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="300" y="100" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="245" y="130" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="205" y="95" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="355" y="130" text-anchor="middle" dominant-baseline="central">CH3</text>
+        <text class="mech-atom mech-blue" x="130" y="75" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-blue" x="130" y="61" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom mech-blue" x="108" y="60" text-anchor="middle" dominant-baseline="central">H</text>
+        <path class="mech-arrow" d="M143.5,78.6 C160,80 178,86 192.4,91.6" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M234.5,120.8 C245,124 258,122 267,118" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M312,85 C320,70 316,52 307,43" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "2단계: 친핵성 공격",
-      desc: "엔올레이트의 알파 탄소(친핵체)가 두 번째 카르보닐 분자의 탄소(친전자체)를 공격한다. 카르보닐의 파이 결합 전자쌍은 산소로 이동해 알콕사이드가 된다.",
-      diagram: `<svg viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="28" y1="35" x2="28" y2="51"/>
-        <line class="mech-bond" x1="53.8" y1="75.1" x2="36.7" y2="63.3"/>
-        <line class="mech-bond" x1="51.3" y1="78.7" x2="34.2" y2="66.9"/>
-        <line class="mech-bond" x1="53.3" y1="88.1" x2="46.1" y2="94.6"/>
-        <line class="mech-bond" x1="106.2" y1="55" x2="106.2" y2="37"/>
-        <line class="mech-bond" x1="101.8" y1="55" x2="101.8" y2="37"/>
-        <line class="mech-bond" x1="110.4" y1="70.4" x2="116.8" y2="76.8"/>
-        <text class="mech-atom mech-magenta" x="28" y="26" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="16" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <text class="mech-atom" x="28" y="60" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="60" y="82" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-label-r" x="38" y="102" text-anchor="middle" dominant-baseline="central">R</text>
-        <text class="mech-atom mech-blue" x="104" y="64" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom mech-blue" x="104" y="28" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-label-r" x="126" y="86" text-anchor="middle" dominant-baseline="central">R'</text>
-        <path class="mech-arrow" d="M40.1,19 C48,28 44,36 28,39.6" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M47.2,73.2 C65,70 78,68 90.2,66.2" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M112,50 C122,42 122,30 116.1,21" marker-end="url(#mech-arrow-head)"/>
-        <line class="mech-reaction-arrow" x1="180" y1="75" x2="265" y2="75" marker-end="url(#mech-reaction-arrow-head)"/>
-        <line class="mech-bond" x1="322.2" y1="35" x2="322.2" y2="27"/>
-        <line class="mech-bond" x1="317.8" y1="35" x2="317.8" y2="27"/>
-        <line class="mech-bond" x1="320" y1="53" x2="320" y2="69"/>
-        <line class="mech-bond" x1="313.1" y1="83.8" x2="304.5" y2="91"/>
-        <line class="mech-bond" x1="329" y1="78" x2="353" y2="78"/>
-        <line class="mech-bond" x1="362" y1="87" x2="362" y2="101"/>
-        <line class="mech-bond" x1="369.6" y1="73.1" x2="379.1" y2="67"/>
-        <text class="mech-atom" x="320" y="44" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="320" y="18" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-atom" x="320" y="78" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-label-r" x="296" y="98" text-anchor="middle" dominant-baseline="central">R</text>
-        <text class="mech-atom" x="362" y="78" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom mech-magenta" x="362" y="110" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="378" y="120" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <text class="mech-label-r" x="390" y="60" text-anchor="middle" dominant-baseline="central">R'</text>
+      desc: "아세톤 엔올레이트의 알파 탄소(친핵체)가 벤즈알데히드(Ph-CHO)의 카르보닐 탄소(친전자체)를 공격한다. 벤즈알데히드의 파이 결합 전자쌍은 산소로 이동해 알콕사이드가 된다.",
+      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="60" y1="49" x2="60" y2="76"/>
+        <line class="mech-bond" x1="102.7" y1="102.2" x2="69.1" y2="86.8"/>
+        <line class="mech-bond" x1="100.9" y1="106.2" x2="67.3" y2="90.8"/>
+        <line class="mech-bond" x1="53.9" y1="91.7" x2="40.8" y2="106.2"/>
+        <line class="mech-bond" x1="192.2" y1="86" x2="192.2" y2="54"/>
+        <line class="mech-bond" x1="187.8" y1="86" x2="187.8" y2="54"/>
+        <line class="mech-bond" x1="182.9" y1="100.5" x2="161.3" y2="117.1"/>
+        <line class="mech-bond" x1="197.9" y1="99.3" x2="219.7" y2="111.3"/>
+        <text class="mech-atom mech-magenta" x="60" y="40" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="44" y="30" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="60" y="85" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-label-r" x="30" y="118" text-anchor="middle" dominant-baseline="central">CH3</text>
+        <text class="mech-atom" x="110" y="108" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-blue" x="190" y="95" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-blue" x="190" y="45" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="155" y="122" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="232" y="118" text-anchor="middle" dominant-baseline="central">Ph</text>
+        <path class="mech-arrow" d="M119,99 C140,90 155,90 165,92" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M195,82 C204,72 201,55 192,46" marker-end="url(#mech-arrow-head)"/>
+        <line class="mech-reaction-arrow" x1="255" y1="100" x2="310" y2="100" marker-end="url(#mech-reaction-arrow-head)"/>
+        <line class="mech-bond" x1="351.7" y1="122.3" x2="370.5" y2="109.9"/>
+        <line class="mech-bond" x1="378" y1="96" x2="378" y2="74"/>
+        <line class="mech-bond" x1="385.1" y1="110.5" x2="401.7" y2="123.1"/>
+        <line class="mech-bond" x1="385.8" y1="100.5" x2="410.2" y2="86.5"/>
+        <line class="mech-bond" x1="425.8" y1="86.5" x2="450.2" y2="100.5"/>
+        <line class="mech-bond" x1="460.2" y1="96" x2="460.2" y2="74"/>
+        <line class="mech-bond" x1="455.8" y1="96" x2="455.8" y2="74"/>
+        <line class="mech-bond" x1="465.3" y1="110.3" x2="477" y2="118.7"/>
+        <text class="mech-label-r" x="340" y="130" text-anchor="middle" dominant-baseline="central">Ph</text>
+        <text class="mech-atom" x="378" y="105" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="378" y="65" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="392" y="55" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="408" y="128" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-atom" x="418" y="82" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="458" y="105" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="458" y="65" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-label-r" x="490" y="128" text-anchor="middle" dominant-baseline="central">CH3</text>
       </svg>`,
     },
     {
       title: "3단계: 양성자화",
-      desc: "알콕사이드 산소가 양성자를 받아 β-히드록시 카르보닐 화합물(알돌)이 완성된다.",
-      diagram: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="66" y1="41" x2="66" y2="59"/>
-        <text class="mech-atom mech-magenta" x="66" y="32" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="52" y="22" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <text class="mech-atom" x="66" y="68" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom mech-blue" x="126" y="26" text-anchor="middle" dominant-baseline="central">H</text>
-        <text class="mech-charge mech-blue" x="138" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
-        <path class="mech-arrow" d="M78.1,25 C88,21 100,21 113,25.7" marker-end="url(#mech-arrow-head)"/>
+      desc: "알콕사이드 산소가 양성자를 받아 β-히드록시 케톤인 4-hydroxy-4-phenyl-2-butanone이 완성된다.",
+      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="220" y1="54" x2="220" y2="81"/>
+        <line class="mech-bond" x1="212.3" y1="94.6" x2="190" y2="107.8"/>
+        <line class="mech-bond" x1="227.7" y1="94.6" x2="210.4" y2="84.3"/>
+        <text class="mech-atom mech-magenta" x="220" y="45" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="204" y="32" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="220" y="90" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-label-r" x="178" y="115" text-anchor="middle" dominant-baseline="central">Ph</text>
+        <text class="mech-label-r" x="268" y="115" text-anchor="start" dominant-baseline="central">CH2COCH3</text>
+        <text class="mech-atom mech-blue" x="300" y="38" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-charge mech-blue" x="312" y="30" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <path class="mech-arrow" d="M230,35 C255,25 272,25 286,32" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
-      title: "4단계(선택적 탈수): E1cb 제거",
-      desc: "산 또는 염기 조건에서 β-수소와 히드록시기가 빠지며 공액된 α,β-불포화 카르보닐(엔온)로 탈수된다.",
-      diagram: `<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="95" y1="82" x2="95" y2="55"/>
-        <line class="mech-bond" x1="88" y1="94" x2="66" y2="108"/>
-        <line class="mech-bond" x1="175" y1="65" x2="175" y2="36"/>
-        <line class="mech-bond" x1="180" y1="65" x2="180" y2="36"/>
-        <line class="mech-bond" x1="168" y1="78" x2="148" y2="90"/>
-        <line class="mech-bond" x1="182" y1="78" x2="203" y2="90"/>
-        <text class="mech-atom mech-magenta" x="177" y="30" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-atom" x="95" y="48" text-anchor="middle" dominant-baseline="central">H</text>
-        <text class="mech-atom" x="95" y="88" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="175" y="70" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="144" y="94" text-anchor="middle" dominant-baseline="central">H</text>
-        <text class="mech-label-r" x="60" y="114" text-anchor="middle" dominant-baseline="central">R</text>
-        <text class="mech-label-r" x="210" y="96" text-anchor="middle" dominant-baseline="central">Ph</text>
-        <path class="mech-arrow" d="M95,80 C110,50 140,50 160,66" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M182,55 C192,45 188,35 179,30" marker-end="url(#mech-arrow-head)"/>
+      title: "4단계(탈수): E1cb 제거",
+      desc: "실제 반응: 4-hydroxy-4-phenyl-2-butanone이 산/염기 조건에서 β-수소와 히드록시기를 잃고 벤잘아세톤((E)-4-phenylbut-3-en-2-one)으로 탈수된다.",
+      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="222" y1="35.9" x2="202.1" y2="25.7"/>
+        <line class="mech-bond" x1="230" y1="76" x2="230" y2="49"/>
+        <line class="mech-bond" x1="238.5" y1="87.8" x2="281.5" y2="102.2"/>
+        <line class="mech-bond" x1="296.4" y1="98.6" x2="314.3" y2="80.7"/>
+        <line class="mech-bond" x1="221.8" y1="88.6" x2="190.8" y2="102.3"/>
+        <line class="mech-bond" x1="298.2" y1="108.7" x2="294.9" y2="107.2"/>
+        <text class="mech-atom mech-magenta" x="230" y="40" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="195" y="22" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-atom" x="230" y="85" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="290" y="105" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="320" y="75" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="178" y="108" text-anchor="middle" dominant-baseline="central">Ph</text>
+        <text class="mech-label-r" x="351" y="130" text-anchor="start" dominant-baseline="central">C(=O)CH3</text>
+        <path class="mech-arrow" d="M312,79 C298,82 282,88 268,95" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M230,55 C240,45 240,32 232,23" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
   ],
