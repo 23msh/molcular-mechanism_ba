@@ -239,15 +239,12 @@ const MECHANISMS = {
         <line class="mech-bond" x1="292.1" y1="104.3" x2="268.4" y2="117.2"/>
         <line class="mech-bond" x1="253.7" y1="115.6" x2="233.4" y2="97.8"/>
         <line class="mech-bond" x1="307.9" y1="104.3" x2="331.6" y2="117.2"/>
-        <line class="mech-bond" x1="122.6" y1="69.9" x2="100.3" y2="54.7"/>
         <text class="mech-atom mech-magenta" x="300" y="55" text-anchor="middle" dominant-baseline="central">O</text>
         <text class="mech-atom" x="300" y="100" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom" x="260.5" y="121.6" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom" x="227.4" y="92.6" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="345.7" y="124.9" text-anchor="middle" dominant-baseline="central">CH3</text>
-        <text class="mech-atom mech-blue" x="130" y="75" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-blue" x="136" y="70" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <text class="mech-atom mech-blue" x="93.7" y="50.2" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-atom mech-blue" x="130" y="75" text-anchor="middle" dominant-baseline="central">HO<tspan dy="-4" font-size="10">−</tspan></text>
         <path class="mech-arrow" d="M143.8,77.5 C160.3,78.9 200.2,84.7 214.6,90.3" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M247.5,102.2 C260.3,93.4 265.9,102.5 277.4,105.5" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M308.2,77.5 C330,68 325,55 311,55" marker-end="url(#mech-arrow-head)"/>
