@@ -246,7 +246,7 @@ const MECHANISMS = {
         <text class="mech-atom" x="205" y="95" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="355" y="130" text-anchor="middle" dominant-baseline="central">CH3</text>
         <text class="mech-atom mech-blue" x="130" y="75" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-blue" x="150" y="101" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-blue" x="130" y="61" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom mech-blue" x="108" y="60" text-anchor="middle" dominant-baseline="central">H</text>
         <path class="mech-arrow" d="M143.5,78.6 C160,80 178,86 192.4,91.6" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M234.5,120.8 C245,116 258,115 267,118" marker-end="url(#mech-arrow-head)"/>
@@ -266,7 +266,7 @@ const MECHANISMS = {
         <line class="mech-bond" x1="182.9" y1="100.5" x2="161.3" y2="117.1"/>
         <line class="mech-bond" x1="197.9" y1="99.3" x2="219.7" y2="111.3"/>
         <text class="mech-atom mech-magenta" x="60" y="40" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="54" y="60" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="44" y="30" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="60" y="85" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-label-r" x="30" y="118" text-anchor="middle" dominant-baseline="central">CH3</text>
         <text class="mech-atom" x="110" y="108" text-anchor="middle" dominant-baseline="central">C</text>
@@ -290,7 +290,7 @@ const MECHANISMS = {
         <text class="mech-label-r" x="340" y="130" text-anchor="middle" dominant-baseline="central">Ph</text>
         <text class="mech-atom" x="378" y="105" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom mech-magenta" x="378" y="65" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="372" y="85" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="392" y="55" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="408" y="128" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-atom" x="418" y="82" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom" x="458" y="105" text-anchor="middle" dominant-baseline="central">C</text>
