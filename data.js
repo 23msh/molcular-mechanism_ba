@@ -249,8 +249,8 @@ const MECHANISMS = {
         <text class="mech-charge mech-blue" x="136" y="70" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom mech-blue" x="108" y="60" text-anchor="middle" dominant-baseline="central">H</text>
         <path class="mech-arrow" d="M143.5,78.6 C160,80 178,86 192.4,91.6" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M234.5,118.8 C245,110 258,113 267,116" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M312,85 C320,70 316,52 307,43" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M228.6,107.7 C241.4,98.9 258.5,108 270,111" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M312,77.5 C316.3,69.5 318.8,59.8 314,55" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
