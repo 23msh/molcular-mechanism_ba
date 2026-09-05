@@ -266,7 +266,7 @@ const MECHANISMS = {
         <line class="mech-bond" x1="182.9" y1="100.5" x2="161.3" y2="117.1"/>
         <line class="mech-bond" x1="197.9" y1="99.3" x2="219.7" y2="111.3"/>
         <text class="mech-atom mech-magenta" x="60" y="40" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="44" y="30" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="66" y="35" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="60" y="85" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-label-r" x="30" y="118" text-anchor="middle" dominant-baseline="central">CH3</text>
         <text class="mech-atom" x="110" y="108" text-anchor="middle" dominant-baseline="central">C</text>
@@ -290,7 +290,7 @@ const MECHANISMS = {
         <text class="mech-label-r" x="340" y="130" text-anchor="middle" dominant-baseline="central">Ph</text>
         <text class="mech-atom" x="378" y="105" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom mech-magenta" x="378" y="65" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="392" y="55" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="384" y="60" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="408" y="128" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-atom" x="418" y="82" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom" x="458" y="105" text-anchor="middle" dominant-baseline="central">C</text>
@@ -306,12 +306,12 @@ const MECHANISMS = {
         <line class="mech-bond" x1="212.3" y1="94.6" x2="190" y2="107.8"/>
         <line class="mech-bond" x1="228" y1="94.2" x2="260.9" y2="111.3"/>
         <text class="mech-atom mech-magenta" x="220" y="45" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="207" y="34.5" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="226" y="40" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="220" y="90" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-label-r" x="178" y="115" text-anchor="middle" dominant-baseline="central">Ph</text>
         <text class="mech-label-r" x="268" y="115" text-anchor="start" dominant-baseline="central">CH2COCH3</text>
         <text class="mech-atom mech-blue" x="300" y="38" text-anchor="middle" dominant-baseline="central">H</text>
-        <text class="mech-charge mech-blue" x="312" y="30" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <text class="mech-charge mech-blue" x="306" y="33" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
         <path class="mech-arrow" d="M230,35 C255,25 272,25 286,32" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
