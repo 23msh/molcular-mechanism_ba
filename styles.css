@@ -220,6 +220,8 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
 .mech-label-r { font-family: var(--font-body); font-size: 11px; fill: var(--ink-muted); }
 .mech-arrow { stroke: var(--mech-magenta); stroke-width: 1.8; fill: none; }
 .mech-arrowhead-fill { fill: var(--mech-magenta); }
+.mech-reaction-arrow { stroke: var(--ink); stroke-width: 1.8; fill: none; }
+.mech-reaction-arrowhead-fill { fill: var(--ink); }
 .mech-magenta { fill: var(--mech-magenta) !important; }
 .mech-blue { fill: var(--mech-blue) !important; }
 

@@ -225,11 +225,9 @@ const RULES = [
 
 // 반응 이름 -> 단계별 [ {title, desc, diagram}, ... ]
 // diagram: 전자이동을 곡선 화살표로 표시하는 인라인 SVG. 화살표 꼬리=전자쌍의 출발(끊어지는 결합/비공유
-// 전자쌍), 화살표 머리=전자쌍의 도착(새로 생기는 결합/전하). 골격은 var(--ink), 화살표는 var(--accent-standalone).
-// 반응 이름 -> 단계별 [ {title, desc, diagram}, ... ]
-// diagram: 전자이동을 곡선 화살표로 표시하는 인라인 SVG. 화살표 꼬리=전자쌍의 출발(끊어지는 결합/비공유
 // 전자쌍), 화살표 머리=전자쌍의 도착(새로 생기는 결합/전하). 골격은 var(--ink), 반응에 직접 관여하는
-// 핵심 산소는 mech-magenta, 들어오는/두 번째 분자는 mech-blue, 화살표는 항상 mech-magenta.
+// 핵심 산소는 mech-magenta, 들어오는/두 번째 분자는 mech-blue, 전자이동 화살표는 항상 mech-magenta이며
+// 원자 반지름+5px 만큼 띄워서 글자를 가리거나 다른 결합선을 뚫고 지나가지 않도록 함.
 const MECHANISMS = {
   "알돌 축합 (Aldol condensation)": [
     {
@@ -250,32 +248,49 @@ const MECHANISMS = {
         <text class="mech-label-r" x="188" y="92" text-anchor="middle" dominant-baseline="central">R'</text>
         <text class="mech-atom mech-blue" x="46" y="54" text-anchor="middle" dominant-baseline="central">B</text>
         <text class="mech-charge mech-blue" x="58" y="44" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <path class="mech-arrow" d="M56,58 C66,63 73,66 79,70" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M96,88 C110,82 120,80 130,80" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M155,68 C163,60 161,50 154,45" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M58.4,60.6 C62,63 65,64.5 68.5,65.9" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M92.8,95.2 C105,90 118,88 130,89" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M159,63 C170,52 168,36 156,26" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
       title: "2단계: 친핵성 공격",
       desc: "엔올레이트의 알파 탄소(친핵체)가 두 번째 카르보닐 분자의 탄소(친전자체)를 공격한다. 카르보닐의 파이 결합 전자쌍은 산소로 이동해 알콕사이드가 된다.",
-      diagram: `<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
-        <line class="mech-bond" x1="58" y1="33" x2="58" y2="49"/>
-        <line class="mech-bond" x1="89.6" y1="75.3" x2="66.8" y2="60.9"/>
-        <line class="mech-bond" x1="87.2" y1="79.1" x2="64.4" y2="64.7"/>
-        <line class="mech-bond" x1="103.9" y1="86.3" x2="112.3" y2="90.8"/>
-        <line class="mech-bond" x1="174.2" y1="51" x2="174.2" y2="35"/>
-        <line class="mech-bond" x1="169.8" y1="51" x2="169.8" y2="35"/>
-        <line class="mech-bond" x1="179.8" y1="64.4" x2="192.7" y2="71.6"/>
-        <text class="mech-atom mech-magenta" x="58" y="24" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="72" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
-        <text class="mech-atom" x="58" y="58" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom" x="96" y="82" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-label-r" x="122" y="96" text-anchor="middle" dominant-baseline="central">R</text>
-        <text class="mech-atom mech-blue" x="172" y="60" text-anchor="middle" dominant-baseline="central">C</text>
-        <text class="mech-atom mech-blue" x="172" y="26" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-label-r" x="204" y="78" text-anchor="middle" dominant-baseline="central">R'</text>
-        <path class="mech-arrow" d="M104,78 C132,68 150,63 161,60" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M177,50 C185,42 183,33 176,28" marker-end="url(#mech-arrow-head)"/>
+      diagram: `<svg viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg">
+        <line class="mech-bond" x1="28" y1="35" x2="28" y2="51"/>
+        <line class="mech-bond" x1="53.8" y1="75.1" x2="36.7" y2="63.3"/>
+        <line class="mech-bond" x1="51.3" y1="78.7" x2="34.2" y2="66.9"/>
+        <line class="mech-bond" x1="53.3" y1="88.1" x2="46.1" y2="94.6"/>
+        <line class="mech-bond" x1="106.2" y1="55" x2="106.2" y2="37"/>
+        <line class="mech-bond" x1="101.8" y1="55" x2="101.8" y2="37"/>
+        <line class="mech-bond" x1="110.4" y1="70.4" x2="116.8" y2="76.8"/>
+        <text class="mech-atom mech-magenta" x="28" y="26" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="16" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="28" y="60" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="60" y="82" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-label-r" x="38" y="102" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-atom mech-blue" x="104" y="64" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-blue" x="104" y="28" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-label-r" x="126" y="86" text-anchor="middle" dominant-baseline="central">R'</text>
+        <path class="mech-arrow" d="M40.1,19 C48,28 44,36 28,39.6" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M47.2,73.2 C65,70 78,68 90.2,66.2" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M112,50 C122,42 122,30 116.1,21" marker-end="url(#mech-arrow-head)"/>
+        <line class="mech-reaction-arrow" x1="180" y1="75" x2="265" y2="75" marker-end="url(#mech-reaction-arrow-head)"/>
+        <line class="mech-bond" x1="322.2" y1="35" x2="322.2" y2="27"/>
+        <line class="mech-bond" x1="317.8" y1="35" x2="317.8" y2="27"/>
+        <line class="mech-bond" x1="320" y1="53" x2="320" y2="69"/>
+        <line class="mech-bond" x1="313.1" y1="83.8" x2="304.5" y2="91"/>
+        <line class="mech-bond" x1="329" y1="78" x2="353" y2="78"/>
+        <line class="mech-bond" x1="362" y1="87" x2="362" y2="101"/>
+        <line class="mech-bond" x1="369.6" y1="73.1" x2="379.1" y2="67"/>
+        <text class="mech-atom" x="320" y="44" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="320" y="18" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="320" y="78" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-label-r" x="296" y="98" text-anchor="middle" dominant-baseline="central">R</text>
+        <text class="mech-atom" x="362" y="78" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="362" y="110" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="378" y="120" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-label-r" x="390" y="60" text-anchor="middle" dominant-baseline="central">R'</text>
       </svg>`,
     },
     {
@@ -284,11 +299,11 @@ const MECHANISMS = {
       diagram: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
         <line class="mech-bond" x1="66" y1="41" x2="66" y2="59"/>
         <text class="mech-atom mech-magenta" x="66" y="32" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="80" y="22" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="52" y="22" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="66" y="68" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom mech-blue" x="126" y="26" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-charge mech-blue" x="138" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
-        <path class="mech-arrow" d="M76,26 C96,18 108,18 118,23" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M78.1,25 C88,21 100,21 113,25.7" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
@@ -308,8 +323,8 @@ const MECHANISMS = {
         <text class="mech-atom" x="156" y="48" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="64" y="82" text-anchor="middle" dominant-baseline="central">R</text>
         <text class="mech-label-r" x="182" y="92" text-anchor="start" dominant-baseline="central">C(=O)R'</text>
-        <path class="mech-arrow" d="M150,52 C134,54 122,60 113,66" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M98,46 C106,38 102,29 96,24" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M147,61 C136,63 126,64 119,64" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M98,44 C102,34 106,25 111.2,17.2" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
   ],
