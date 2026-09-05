@@ -250,7 +250,7 @@ const MECHANISMS = {
         <text class="mech-atom mech-blue" x="108" y="60" text-anchor="middle" dominant-baseline="central">H</text>
         <path class="mech-arrow" d="M143.5,78.6 C160,80 178,86 192.4,91.6" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M228.6,107.7 C241.4,98.9 258.5,108 270,111" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M304.2,77.5 C314.2,58 300,29 300,44" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M304.2,77.5 C322,63 332,55 314,55" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
