@@ -249,7 +249,7 @@ const MECHANISMS = {
         <text class="mech-charge mech-blue" x="130" y="61" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom mech-blue" x="108" y="60" text-anchor="middle" dominant-baseline="central">H</text>
         <path class="mech-arrow" d="M143.5,78.6 C160,80 178,86 192.4,91.6" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M234.5,120.8 C245,124 258,122 267,118" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M234.5,120.8 C245,116 258,115 267,118" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M312,85 C320,70 316,52 307,43" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
@@ -275,7 +275,9 @@ const MECHANISMS = {
         <text class="mech-atom" x="155" y="122" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="232" y="118" text-anchor="middle" dominant-baseline="central">Ph</text>
         <path class="mech-arrow" d="M119,99 C140,90 155,90 165,92" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M195,82 C204,72 201,55 192,46" marker-end="url(#mech-arrow-head)"/>
+        <line x1="137" y1="73" x2="147" y2="73" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="142" y1="68" x2="142" y2="78" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+        <path class="mech-arrow" d="M196.5,82 C205.5,72 202.5,55 193.5,46" marker-end="url(#mech-arrow-head)"/>
         <line class="mech-reaction-arrow" x1="255" y1="100" x2="310" y2="100" marker-end="url(#mech-reaction-arrow-head)"/>
         <line class="mech-bond" x1="351.7" y1="122.3" x2="370.5" y2="109.9"/>
         <line class="mech-bond" x1="378" y1="96" x2="378" y2="74"/>
@@ -304,7 +306,7 @@ const MECHANISMS = {
         <line class="mech-bond" x1="212.3" y1="94.6" x2="190" y2="107.8"/>
         <line class="mech-bond" x1="228" y1="94.2" x2="260.9" y2="111.3"/>
         <text class="mech-atom mech-magenta" x="220" y="45" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-magenta" x="204" y="32" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-magenta" x="207" y="34.5" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom" x="220" y="90" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-label-r" x="178" y="115" text-anchor="middle" dominant-baseline="central">Ph</text>
         <text class="mech-label-r" x="268" y="115" text-anchor="start" dominant-baseline="central">CH2COCH3</text>
@@ -330,7 +332,7 @@ const MECHANISMS = {
         <text class="mech-atom" x="320" y="75" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="178" y="108" text-anchor="middle" dominant-baseline="central">Ph</text>
         <text class="mech-label-r" x="351" y="130" text-anchor="start" dominant-baseline="central">C(=O)CH3</text>
-        <path class="mech-arrow" d="M312,79 C298,82 282,88 268,95" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M312,79 C298,76 282,82 268,95" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M230,55 C240,45 240,32 232,23" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
