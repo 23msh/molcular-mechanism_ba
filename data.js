@@ -233,7 +233,7 @@ const MECHANISMS = {
     {
       title: "1단계: 엔올레이트 형성",
       desc: "실제 반응: 아세톤과 벤즈알데히드의 클라이젠-슈미트 축합(Claisen–Schmidt condensation). 염기(OH⁻)가 아세톤의 알파 탄소에서 H를 떼어가고, 그 전자쌍이 알파 탄소-카르보닐 탄소 사이로 이동해 엔올레이트를 형성한다.",
-      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+      diagram: `<svg viewBox="80 15 310 135" xmlns="http://www.w3.org/2000/svg">
         <line class="mech-bond" x1="302.2" y1="91" x2="302.2" y2="64"/>
         <line class="mech-bond" x1="297.8" y1="91" x2="297.8" y2="64"/>
         <line class="mech-bond" x1="292.1" y1="104.3" x2="252.9" y2="125.7"/>
@@ -256,7 +256,7 @@ const MECHANISMS = {
     {
       title: "2단계: 친핵성 공격",
       desc: "아세톤 엔올레이트의 알파 탄소(친핵체)가 벤즈알데히드(Ph-CHO)의 카르보닐 탄소(친전자체)를 공격한다. 벤즈알데히드의 파이 결합 전자쌍은 산소로 이동해 알콕사이드가 된다.",
-      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+      diagram: `<svg viewBox="0 10 505 140" xmlns="http://www.w3.org/2000/svg">
         <line class="mech-bond" x1="60" y1="49" x2="60" y2="76"/>
         <line class="mech-bond" x1="102.7" y1="102.2" x2="69.1" y2="86.8"/>
         <line class="mech-bond" x1="100.9" y1="106.2" x2="67.3" y2="90.8"/>
@@ -299,7 +299,7 @@ const MECHANISMS = {
     {
       title: "3단계: 양성자화",
       desc: "알콕사이드 산소가 양성자를 받아 β-히드록시 케톤인 4-hydroxy-4-phenyl-2-butanone이 완성된다.",
-      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+      diagram: `<svg viewBox="150 15 190 115" xmlns="http://www.w3.org/2000/svg">
         <line class="mech-bond" x1="220" y1="54" x2="220" y2="81"/>
         <line class="mech-bond" x1="212.3" y1="94.6" x2="190" y2="107.8"/>
         <line class="mech-bond" x1="227.7" y1="94.6" x2="210.4" y2="84.3"/>
@@ -316,7 +316,7 @@ const MECHANISMS = {
     {
       title: "4단계(탈수): E1cb 제거",
       desc: "실제 반응: 4-hydroxy-4-phenyl-2-butanone이 산/염기 조건에서 β-수소와 히드록시기를 잃고 벤잘아세톤((E)-4-phenylbut-3-en-2-one)으로 탈수된다.",
-      diagram: `<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+      diagram: `<svg viewBox="155 10 260 135" xmlns="http://www.w3.org/2000/svg">
         <line class="mech-bond" x1="222" y1="35.9" x2="202.1" y2="25.7"/>
         <line class="mech-bond" x1="230" y1="76" x2="230" y2="49"/>
         <line class="mech-bond" x1="238.5" y1="87.8" x2="281.5" y2="102.2"/>

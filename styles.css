@@ -212,7 +212,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
   border-radius: 8px;
   padding: 10px 14px;
 }
-.mechanism-diagram svg { display: block; width: 100%; height: auto; max-width: 480px; }
+.mechanism-diagram svg { display: block; width: 100%; height: auto; max-width: 600px; }
 .mech-bond { stroke: var(--ink); stroke-width: 1.6; fill: none; stroke-linecap: round; }
 .mech-atom { font-family: var(--font-head); font-size: 13px; fill: var(--ink); }
 .mech-charge { font-family: var(--font-head); font-size: 10px; fill: var(--ink); }
