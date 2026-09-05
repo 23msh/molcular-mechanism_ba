@@ -324,7 +324,7 @@ const MECHANISMS = {
         <line class="mech-bond" x1="238.5" y1="87.8" x2="281.5" y2="102.2"/>
         <line class="mech-bond" x1="296.4" y1="98.6" x2="314.3" y2="80.7"/>
         <line class="mech-bond" x1="221.8" y1="88.6" x2="190.8" y2="102.3"/>
-        <line class="mech-bond" x1="298.2" y1="108.7" x2="294.9" y2="107.2"/>
+        <line class="mech-bond" x1="298.3" y1="108.4" x2="343.6" y2="127"/>
         <text class="mech-atom mech-magenta" x="230" y="40" text-anchor="middle" dominant-baseline="central">O</text>
         <text class="mech-atom" x="195" y="22" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-atom" x="230" y="85" text-anchor="middle" dominant-baseline="central">C</text>
