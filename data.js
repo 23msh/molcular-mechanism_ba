@@ -277,7 +277,7 @@ const MECHANISMS = {
         <path class="mech-arrow" d="M119,99 C140,90 155,90 165,92" marker-end="url(#mech-arrow-head)"/>
         <line x1="137" y1="73" x2="147" y2="73" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
         <line x1="142" y1="68" x2="142" y2="78" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
-        <path class="mech-arrow" d="M196.5,82 C205.5,72 202.5,55 193.5,46" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M198.2,70 C220,60.5 215,45 201,45" marker-end="url(#mech-arrow-head)"/>
         <line class="mech-reaction-arrow" x1="255" y1="100" x2="310" y2="100" marker-end="url(#mech-reaction-arrow-head)"/>
         <line class="mech-bond" x1="351.7" y1="122.3" x2="370.5" y2="109.9"/>
         <line class="mech-bond" x1="378" y1="96" x2="378" y2="74"/>
@@ -332,8 +332,8 @@ const MECHANISMS = {
         <text class="mech-atom" x="320" y="75" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="178" y="108" text-anchor="middle" dominant-baseline="central">Ph</text>
         <text class="mech-label-r" x="351" y="130" text-anchor="start" dominant-baseline="central">C(=O)CH3</text>
-        <path class="mech-arrow" d="M312,79 C298,76 282,82 268,95" marker-end="url(#mech-arrow-head)"/>
-        <path class="mech-arrow" d="M230,55 C240,45 240,32 232,23" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M309.6,85.4 C295.6,82.4 275,76 261,89" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M236,62.5 C257.8,53 255,40 241,40" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
   ],
