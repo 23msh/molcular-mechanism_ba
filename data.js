@@ -246,7 +246,7 @@ const MECHANISMS = {
         <text class="mech-atom" x="205" y="95" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="355" y="130" text-anchor="middle" dominant-baseline="central">CH3</text>
         <text class="mech-atom mech-blue" x="130" y="75" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge mech-blue" x="135" y="70" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-charge mech-blue" x="136" y="70" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
         <text class="mech-atom mech-blue" x="108" y="60" text-anchor="middle" dominant-baseline="central">H</text>
         <path class="mech-arrow" d="M143.5,78.6 C160,80 178,86 192.4,91.6" marker-end="url(#mech-arrow-head)"/>
         <path class="mech-arrow" d="M234.5,120.8 C245,116 258,115 267,118" marker-end="url(#mech-arrow-head)"/>
