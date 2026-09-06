@@ -342,17 +342,21 @@ const MECHANISMS = {
         <line class="mech-bond" x1="95" y1="69" x2="95" y2="42"/>
         <line class="mech-bond" x1="88.2" y1="27.1" x2="67.8" y2="9.4"/>
         <line class="mech-bond" x1="87.5" y1="82.9" x2="64.8" y2="97.6"/>
-        <line class="mech-bond" x1="102.6" y1="82.8" x2="125.4" y2="97.3"/>
+        <line class="mech-bond" x1="104" y1="78" x2="131" y2="78"/>
+        <line class="mech-bond" x1="140" y1="69" x2="140" y2="42"/>
+        <line class="mech-bond" x1="147.5" y1="82.9" x2="170.2" y2="97.6"/>
         <text class="mech-atom" x="95" y="78" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom mech-magenta" x="95" y="33" text-anchor="middle" dominant-baseline="central">O</text>
         <text class="mech-atom" x="61.8" y="4.1" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="55.6" y="103.6" text-anchor="middle" dominant-baseline="central">R</text>
-        <text class="mech-label-r" x="136.4" y="104.2" text-anchor="middle" dominant-baseline="central">R'</text>
+        <text class="mech-atom" x="140" y="78" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom" x="140" y="34" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="181.1" y="104.7" text-anchor="middle" dominant-baseline="central">R'</text>
         <circle class="mech-lone-pair" cx="99.7" cy="26.5" r="1.6"/>
         <circle class="mech-lone-pair" cx="104.1" cy="30.7" r="1.6"/>
         <text class="mech-atom mech-blue" x="178" y="24" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-charge mech-blue" x="184" y="19" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
-        <path class="mech-arrow" d="M108.9,31.5 C125.4,20 150.7,19.8 165.1,25.4" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M108.9,30.5 C125.4,19 150.7,18.8 165.1,24.4" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
