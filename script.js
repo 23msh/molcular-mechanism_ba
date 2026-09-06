@@ -59,7 +59,13 @@ async function selectCompoundByUserInput(rawInput) {
   showSmilesStatus(`"${rawInput}"를 PubChem에서 조회하는 중...`, false);
   const pubchemSmiles = await lookupSmilesFromPubChem(rawInput);
   if (!pubchemSmiles) {
-    showSmilesStatus(`"${rawInput}"를 화합물 이름이나 SMILES로 인식하지 못했습니다 (PubChem에서도 찾지 못했습니다).`, true);
+    // PubChem은 영문 이름(IUPAC명·관용명)으로만 검색되므로, 한글 입력이 실패한 경우
+    // 영문으로 다시 시도해보라고 안내한다 (로컬 사전에 없는 한글명은 PubChem도 모름).
+    const hasHangul = /[가-힣]/.test(rawInput);
+    const hint = hasHangul
+      ? " PubChem은 한글 이름을 인식하지 못하니 영문 이름으로 다시 시도해보세요."
+      : "";
+    showSmilesStatus(`"${rawInput}"를 화합물 이름이나 SMILES로 인식하지 못했습니다 (PubChem에서도 찾지 못했습니다).${hint}`, true);
     return;
   }
   const pubchemResult = analyzeSmiles(pubchemSmiles);
