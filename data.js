@@ -349,7 +349,7 @@ const MECHANISMS = {
         <text class="mech-label-r" x="55.6" y="103.6" text-anchor="middle" dominant-baseline="central">R</text>
         <text class="mech-label-r" x="136.4" y="104.2" text-anchor="middle" dominant-baseline="central">R'</text>
         <circle class="mech-lone-pair" cx="100.7" cy="26.5" r="1.6"/>
-        <circle class="mech-lone-pair" cx="106.1" cy="30.7" r="1.6"/>
+        <circle class="mech-lone-pair" cx="105.1" cy="30.7" r="1.6"/>
         <text class="mech-atom mech-blue" x="178" y="24" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-charge mech-blue" x="184" y="19" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
         <path class="mech-arrow" d="M108.9,31.5 C125.4,20 150.7,19.8 165.1,25.4" marker-end="url(#mech-arrow-head)"/>
@@ -368,7 +368,7 @@ const MECHANISMS = {
         <line class="mech-bond" x1="182.6" y1="82.9" x2="205.2" y2="97.6"/>
         <text class="mech-atom" x="130" y="78" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom mech-magenta" x="130" y="33" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge" x="130" y="21" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <text class="mech-charge" x="130" y="23" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
         <text class="mech-atom" x="94.8" y="6.6" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-atom" x="163.8" y="4.8" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="90.6" y="103.6" text-anchor="middle" dominant-baseline="central">R</text>
