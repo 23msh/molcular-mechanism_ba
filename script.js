@@ -59,6 +59,10 @@ async function selectCompoundByUserInput(rawInput) {
   showSmilesStatus(`"${rawInput}"를 PubChem에서 조회하는 중...`, false);
   const pubchemSmiles = await lookupSmilesFromPubChem(rawInput);
   if (!pubchemSmiles) {
+    if (getPubchemLastErrorReason() === "busy") {
+      showSmilesStatus(`PubChem 서버가 지금 요청이 몰려 응답하지 못하고 있습니다 (503). 잠시(수십 초~1분) 후 "${rawInput}"를 다시 검색해보세요.`, true);
+      return;
+    }
     // PubChem은 영문 이름(IUPAC명·관용명)으로만 검색되므로, 한글 입력이 실패한 경우
     // 영문으로 다시 시도해보라고 안내한다 (로컬 사전에 없는 한글명은 PubChem도 모름).
     const hasHangul = /[가-힣]/.test(rawInput);
