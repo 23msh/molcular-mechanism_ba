@@ -348,11 +348,11 @@ const MECHANISMS = {
         <text class="mech-atom" x="61.8" y="4.1" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="55.6" y="103.6" text-anchor="middle" dominant-baseline="central">R</text>
         <text class="mech-label-r" x="136.4" y="104.2" text-anchor="middle" dominant-baseline="central">R'</text>
-        <circle class="mech-lone-pair" cx="103.7" cy="23.5" r="1.6"/>
-        <circle class="mech-lone-pair" cx="109.1" cy="27.7" r="1.6"/>
+        <circle class="mech-lone-pair" cx="100.7" cy="26.5" r="1.6"/>
+        <circle class="mech-lone-pair" cx="106.1" cy="30.7" r="1.6"/>
         <text class="mech-atom mech-blue" x="178" y="24" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-charge mech-blue" x="184" y="19" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
-        <path class="mech-arrow" d="M108.9,31.5 C125.4,32.9 150.7,19.8 165.1,25.4" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M108.9,31.5 C125.4,20 150.7,19.8 165.1,25.4" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
@@ -368,14 +368,14 @@ const MECHANISMS = {
         <line class="mech-bond" x1="182.6" y1="82.9" x2="205.2" y2="97.6"/>
         <text class="mech-atom" x="130" y="78" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom mech-magenta" x="130" y="33" text-anchor="middle" dominant-baseline="central">O</text>
-        <text class="mech-charge" x="136" y="28" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
+        <text class="mech-charge" x="130" y="21" text-anchor="middle" dominant-baseline="central" style="font-size:10px">+</text>
         <text class="mech-atom" x="94.8" y="6.6" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-atom" x="163.8" y="4.8" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="90.6" y="103.6" text-anchor="middle" dominant-baseline="central">R</text>
         <text class="mech-atom" x="175" y="78" text-anchor="middle" dominant-baseline="central">C</text>
         <text class="mech-atom" x="175" y="34" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="216.1" y="104.7" text-anchor="middle" dominant-baseline="central">R'</text>
-        <path class="mech-arrow" d="M136,55.5 C157.8,46 158,33 144,33" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M140,55.5 C161.8,46 155,33 141,33" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
     {
@@ -392,7 +392,7 @@ const MECHANISMS = {
         <text class="mech-atom" x="130" y="16" text-anchor="middle" dominant-baseline="central">H</text>
         <text class="mech-label-r" x="85" y="107" text-anchor="middle" dominant-baseline="central">R</text>
         <text class="mech-label-r" x="130" y="109" text-anchor="middle" dominant-baseline="central">R'</text>
-        <path class="mech-arrow" d="M124,37.5 C110,34.5 121.5,41 107.5,54" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M124,37.5 C118.5,33 113,38.5 107.5,54" marker-end="url(#mech-arrow-head)"/>
       </svg>`,
     },
   ],
