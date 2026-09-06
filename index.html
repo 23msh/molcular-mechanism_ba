@@ -40,7 +40,7 @@
       <button id="smiles-submit" type="submit" disabled>검색</button>
     </form>
     <p id="smiles-status" class="smiles-status" hidden></p>
-    <p class="panel-note">화합물 이름(한글/영문) 또는 SMILES를 입력하세요. 아래는 예시 화합물입니다.</p>
+    <p class="panel-note">화합물 이름(한글/영문) 또는 SMILES를 입력하세요. 등록되지 않은 이름은 PubChem에서 실시간으로 조회합니다(인터넷 연결 필요). 아래는 예시 화합물입니다.</p>
     <div id="compound-list" class="compound-list"></div>
   </section>
 
@@ -78,9 +78,10 @@
 </footer>
 
 <script src="vendor/rdkit/RDKit_minimal.js"></script>
-<script src="chem.js?v=2"></script>
-<script src="names.js?v=2"></script>
-<script src="data.js?v=2"></script>
-<script src="script.js?v=2"></script>
+<script src="chem.js?v=3"></script>
+<script src="names.js?v=3"></script>
+<script src="pubchem.js?v=3"></script>
+<script src="data.js?v=3"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
