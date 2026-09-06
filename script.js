@@ -33,25 +33,46 @@ function selectCompoundBySmiles(smiles, displayName) {
   });
 }
 
-// 검색창 입력 처리: 이름 사전(names.js)에서 먼저 SMILES로 치환을 시도하고,
-// 사전에 없으면 입력을 그대로 SMILES로 간주한다.
-function selectCompoundByUserInput(rawInput) {
+// 검색창 입력 처리 순서:
+// 1) 이름 사전(names.js)에서 SMILES로 치환 시도
+// 2) (사전에 없으면) 입력을 그대로 SMILES로 파싱 시도
+// 3) (그것도 안 되면) PubChem PUG REST API로 실시간 이름 조회 (인터넷 필요)
+async function selectCompoundByUserInput(rawInput) {
   const { smiles, matchedLabel, polymerNote } = resolveCompoundInput(rawInput);
   if (polymerNote) {
     showSmilesStatus(polymerNote, true);
     return;
   }
-  const result = analyzeSmiles(smiles);
-  if (!result) {
-    showSmilesStatus(`"${rawInput}"를 화합물 이름이나 SMILES로 인식하지 못했습니다.`, true);
+
+  const localResult = analyzeSmiles(smiles);
+  if (localResult) {
+    showSmilesStatus(matchedLabel ? `"${rawInput}" → ${matchedLabel}로 해석했습니다.` : "", false);
+    selectCompound({
+      id: localResult.canonicalSmiles,
+      name: matchedLabel || rawInput,
+      formula: localResult.canonicalSmiles,
+      flags: localResult.flags,
+    });
     return;
   }
-  showSmilesStatus(matchedLabel ? `"${rawInput}" → ${matchedLabel}로 해석했습니다.` : "", false);
+
+  showSmilesStatus(`"${rawInput}"를 PubChem에서 조회하는 중...`, false);
+  const pubchemSmiles = await lookupSmilesFromPubChem(rawInput);
+  if (!pubchemSmiles) {
+    showSmilesStatus(`"${rawInput}"를 화합물 이름이나 SMILES로 인식하지 못했습니다 (PubChem에서도 찾지 못했습니다).`, true);
+    return;
+  }
+  const pubchemResult = analyzeSmiles(pubchemSmiles);
+  if (!pubchemResult) {
+    showSmilesStatus(`PubChem에서 "${rawInput}"의 구조는 찾았지만 해석하지 못했습니다.`, true);
+    return;
+  }
+  showSmilesStatus(`"${rawInput}" → PubChem 조회 결과로 해석했습니다 (SMILES: ${pubchemSmiles}).`, false);
   selectCompound({
-    id: result.canonicalSmiles,
-    name: matchedLabel || rawInput,
-    formula: result.canonicalSmiles,
-    flags: result.flags,
+    id: pubchemResult.canonicalSmiles,
+    name: rawInput,
+    formula: pubchemResult.canonicalSmiles,
+    flags: pubchemResult.flags,
   });
 }
 
@@ -78,11 +99,16 @@ function setupSmilesSearch() {
       showSmilesStatus("RDKit을 불러오지 못했습니다. 네트워크 연결을 확인하세요.", true);
     });
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const raw = input.value.trim();
     if (!raw) return;
-    selectCompoundByUserInput(raw);
+    submit.disabled = true;
+    try {
+      await selectCompoundByUserInput(raw);
+    } finally {
+      submit.disabled = false;
+    }
   });
 }
 
