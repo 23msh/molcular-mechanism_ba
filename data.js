@@ -467,4 +467,42 @@ const MECHANISMS = {
       </svg>`,
     },
   ],
+  "탈수소화 (Dehydrogenation)": [
+    {
+      title: "1단계: 염기의 알코올 양성자 제거",
+      desc: "실제 반응: 4-hydroxy-2-pentanone의 2차 알코올(C4)이 촉매(Pt/Pd) 표면에서 탈수소화된다. 염기(HO⁻)가 알코올의 O-H 결합에서 양성자를 제거해 알콕사이드를 형성한다.",
+      diagram: `<svg viewBox="30 -5 215 155" xmlns="http://www.w3.org/2000/svg" style="max-width:416px">
+        <line class="mech-bond" x1="150" y1="81" x2="150" y2="54"/>
+        <line class="mech-bond" x1="143.6" y1="38.6" x2="124.6" y2="19.6"/>
+        <line class="mech-bond" x1="143.6" y1="96.4" x2="124.5" y2="115.5"/>
+        <line class="mech-bond" x1="156.4" y1="96.4" x2="175.5" y2="115.5"/>
+        <text class="mech-atom" x="150" y="90" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="150" y="45" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-atom" x="118.9" y="13.9" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="113.2" y="126.8" text-anchor="middle" dominant-baseline="central">CH3</text>
+        <text class="mech-label-r" x="181.1" y="121.1" text-anchor="start" dominant-baseline="central">CH2COCH3</text>
+        <text class="mech-atom mech-blue" x="60" y="10" text-anchor="middle" dominant-baseline="central">HO<tspan dy="-4" font-size="10">−</tspan></text>
+        <path class="mech-arrow" d="M73.97,10.92 C85,2 95,2 105.93,13.04" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M145.05,37.22 C150,28 158,32 161,45" marker-end="url(#mech-arrow-head)"/>
+      </svg>`,
+    },
+    {
+      title: "2단계: 하이드라이드 이탈과 카르보닐 재형성",
+      desc: "알콕사이드 산소의 비공유 전자쌍이 C-O 파이 결합을 형성하며 카르보닐(C=O)이 다시 생기고, 같은 탄소의 C-H 결합 전자쌍은 하이드라이드(H⁻)로 떨어져 나간다. 이 하이드라이드는 촉매 표면에서 앞서 제거된 양성자와 결합해 H2로 방출되고, 생성물은 pentane-2,4-dione이 된다.",
+      diagram: `<svg viewBox="85 20 165 130" xmlns="http://www.w3.org/2000/svg" style="max-width:319px">
+        <line class="mech-bond" x1="150" y1="81" x2="150" y2="54"/>
+        <line class="mech-bond" x1="156.4" y1="83.6" x2="175.5" y2="64.5"/>
+        <line class="mech-bond" x1="143.6" y1="96.4" x2="124.5" y2="115.5"/>
+        <line class="mech-bond" x1="156.4" y1="96.4" x2="175.5" y2="115.5"/>
+        <text class="mech-atom" x="150" y="90" text-anchor="middle" dominant-baseline="central">C</text>
+        <text class="mech-atom mech-magenta" x="150" y="45" text-anchor="middle" dominant-baseline="central">O</text>
+        <text class="mech-charge mech-magenta" x="156" y="40" text-anchor="middle" dominant-baseline="central" style="font-size:10px">−</text>
+        <text class="mech-atom" x="181.1" y="58.9" text-anchor="middle" dominant-baseline="central">H</text>
+        <text class="mech-label-r" x="113.2" y="126.8" text-anchor="middle" dominant-baseline="central">CH3</text>
+        <text class="mech-label-r" x="181.1" y="121.1" text-anchor="start" dominant-baseline="central">CH2COCH3</text>
+        <path class="mech-arrow" d="M139,45 C133,48 140,55 147,67.5" marker-end="url(#mech-arrow-head)"/>
+        <path class="mech-arrow" d="M170.15,78.33 C172,74 167.68,72.32 171.92,68.08" marker-end="url(#mech-arrow-head)"/>
+      </svg>`,
+    },
+  ],
 };
