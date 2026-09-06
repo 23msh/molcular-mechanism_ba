@@ -36,7 +36,11 @@ function selectCompoundBySmiles(smiles, displayName) {
 // 검색창 입력 처리: 이름 사전(names.js)에서 먼저 SMILES로 치환을 시도하고,
 // 사전에 없으면 입력을 그대로 SMILES로 간주한다.
 function selectCompoundByUserInput(rawInput) {
-  const { smiles, matchedLabel } = resolveCompoundInput(rawInput);
+  const { smiles, matchedLabel, polymerNote } = resolveCompoundInput(rawInput);
+  if (polymerNote) {
+    showSmilesStatus(polymerNote, true);
+    return;
+  }
   const result = analyzeSmiles(smiles);
   if (!result) {
     showSmilesStatus(`"${rawInput}"를 화합물 이름이나 SMILES로 인식하지 못했습니다.`, true);

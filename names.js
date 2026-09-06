@@ -26,6 +26,16 @@ const GENERIC_CLASS_ALIASES = {
   "알킬할라이드": { smiles: "CCCl", label: "클로로에탄 (할로알칸의 대표 예시)" },
   "디올": { smiles: "OCCO", label: "에틸렌글리콜 (비시날 디올의 대표 예시)" },
   "diol": { smiles: "OCCO", label: "ethylene glycol (diol 대표 예시)" },
+  "아미노산": { smiles: "NCC(=O)O", label: "글리신 (아미노산의 대표 예시)" },
+  "amino acid": { smiles: "NCC(=O)O", label: "glycine (amino acid 대표 예시)" },
+  "amino acids": { smiles: "NCC(=O)O", label: "glycine (amino acid 대표 예시)" },
+};
+
+// DNA/RNA처럼 "하나의 분자"로 표현할 수 없는 고분자는 대표 분자로 대충 치환하지 않고,
+// 왜 검색이 안 되는지 설명하는 안내 메시지를 보여준다.
+const POLYMER_NOTES = {
+  "dna": "DNA는 하나의 분자가 아니라 뉴클레오타이드가 수백만 개 연결된 고분자라서, 이 도구가 다루는 단일 분자 반응으로는 표현할 수 없습니다. 구성 단위인 뉴클레오타이드(예: '아데노신')나 그 안의 당(디옥시리보스)·염기 부분을 개별적으로 검색해보세요.",
+  "rna": "RNA도 DNA와 마찬가지로 뉴클레오타이드가 길게 연결된 고분자라서, 단일 분자 반응으로는 표현할 수 없습니다. 구성 단위인 뉴클레오타이드(예: '아데노신')를 개별적으로 검색해보세요.",
 };
 
 // 특정 화합물 이름(한글/영문 관용명) -> 정확한 SMILES
@@ -79,14 +89,62 @@ const COMPOUND_NAME_ALIASES = {
   "사이클로헥사놀": "OC1CCCCC1",
   "cyclohexanol": "OC1CCCCC1",
   "4-hydroxy-2-pentanone": "CC(O)CC(C)=O",
+
+  // ---- 생체분자 ----
+  "포도당": "OCC(O)C(O)C(O)C(O)C=O",
+  "glucose": "OCC(O)C(O)C(O)C(O)C=O",
+  "과당": "OCC(=O)C(O)C(O)C(O)CO",
+  "fructose": "OCC(=O)C(O)C(O)C(O)CO",
+  "자당": "OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O",
+  "설탕": "OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O",
+  "sucrose": "OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O",
+  "글리신": "NCC(=O)O",
+  "glycine": "NCC(=O)O",
+  "atp": "Nc1ncnc2c1ncn2C3OC(COP(=O)(O)OP(=O)(O)OP(=O)(O)O)C(O)C3O",
+  "아데노신": "Nc1ncnc2c1ncn2C3OC(CO)C(O)C3O",
+  "adenosine": "Nc1ncnc2c1ncn2C3OC(CO)C(O)C3O",
+  "콜레스테롤": "CC(C)CCCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C",
+  "cholesterol": "CC(C)CCCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C",
+
+  // ---- 의약품 ----
+  "아스피린": "CC(=O)Oc1ccccc1C(=O)O",
+  "aspirin": "CC(=O)Oc1ccccc1C(=O)O",
+  "이부프로펜": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+  "ibuprofen": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+  "파라세타몰": "CC(=O)Nc1ccc(O)cc1",
+  "아세트아미노펜": "CC(=O)Nc1ccc(O)cc1",
+  "paracetamol": "CC(=O)Nc1ccc(O)cc1",
+  "acetaminophen": "CC(=O)Nc1ccc(O)cc1",
+  "카페인": "Cn1cnc2c1c(=O)n(C)c(=O)n2C",
+  "caffeine": "Cn1cnc2c1c(=O)n(C)c(=O)n2C",
+  "니코틴": "CN1CCCC1c1cccnc1",
+  "nicotine": "CN1CCCC1c1cccnc1",
+
+  // ---- 기초 화학 ----
+  "메탄": "C",
+  "methane": "C",
+  "에탄": "CC",
+  "ethane": "CC",
+  "프로판": "CCC",
+  "propane": "CCC",
+  "부탄": "CCCC",
+  "butane": "CCCC",
+  "암모니아": "N",
+  "ammonia": "N",
+  "황산": "OS(=O)(=O)O",
+  "sulfuric acid": "OS(=O)(=O)O",
 };
 
 // 입력 문자열을 SMILES로 변환 시도. 이름 사전에서 못 찾으면 입력을 그대로 SMILES로 간주.
-// 반환값: { smiles, matchedLabel } — matchedLabel은 이름이 매칭되어 치환됐을 때만 채워짐.
+// 반환값: { smiles, matchedLabel } (matchedLabel은 이름이 매칭되어 치환됐을 때만 채워짐)
+// 또는 폴리머처럼 단일 분자로 표현 불가능한 경우 { smiles: null, polymerNote }.
 function resolveCompoundInput(rawInput) {
   const trimmed = rawInput.trim();
   const key = trimmed.toLowerCase();
 
+  if (POLYMER_NOTES[key]) {
+    return { smiles: null, matchedLabel: null, polymerNote: POLYMER_NOTES[key] };
+  }
   if (GENERIC_CLASS_ALIASES[key]) {
     const { smiles, label } = GENERIC_CLASS_ALIASES[key];
     return { smiles, matchedLabel: label };
