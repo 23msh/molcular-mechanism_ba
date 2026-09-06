@@ -36,11 +36,11 @@
   <section class="panel compound-panel" aria-labelledby="compound-heading">
     <h2 id="compound-heading">1. 화합물 선택</h2>
     <form id="smiles-form" class="smiles-form">
-      <input id="smiles-input" class="smiles-input" type="text" placeholder="SMILES 입력 (예: CCO)" autocomplete="off" disabled>
+      <input id="smiles-input" class="smiles-input" type="text" placeholder="이름 또는 SMILES 입력 (예: 에탄올, butene, CCO)" autocomplete="off" disabled>
       <button id="smiles-submit" type="submit" disabled>검색</button>
     </form>
     <p id="smiles-status" class="smiles-status" hidden></p>
-    <p class="panel-note">화학구조는 SMILES 표기법으로 입력하세요. 아래는 예시 화합물입니다.</p>
+    <p class="panel-note">화합물 이름(한글/영문) 또는 SMILES를 입력하세요. 아래는 예시 화합물입니다.</p>
     <div id="compound-list" class="compound-list"></div>
   </section>
 
@@ -79,6 +79,7 @@
 
 <script src="vendor/rdkit/RDKit_minimal.js"></script>
 <script src="chem.js"></script>
+<script src="names.js"></script>
 <script src="data.js"></script>
 <script src="script.js"></script>
 </body>

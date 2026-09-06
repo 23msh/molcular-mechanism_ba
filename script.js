@@ -33,6 +33,24 @@ function selectCompoundBySmiles(smiles, displayName) {
   });
 }
 
+// 검색창 입력 처리: 이름 사전(names.js)에서 먼저 SMILES로 치환을 시도하고,
+// 사전에 없으면 입력을 그대로 SMILES로 간주한다.
+function selectCompoundByUserInput(rawInput) {
+  const { smiles, matchedLabel } = resolveCompoundInput(rawInput);
+  const result = analyzeSmiles(smiles);
+  if (!result) {
+    showSmilesStatus(`"${rawInput}"를 화합물 이름이나 SMILES로 인식하지 못했습니다.`, true);
+    return;
+  }
+  showSmilesStatus(matchedLabel ? `"${rawInput}" → ${matchedLabel}로 해석했습니다.` : "", false);
+  selectCompound({
+    id: result.canonicalSmiles,
+    name: matchedLabel || rawInput,
+    formula: result.canonicalSmiles,
+    flags: result.flags,
+  });
+}
+
 function showSmilesStatus(text, isError) {
   const el = document.getElementById("smiles-status");
   el.textContent = text;
@@ -58,9 +76,9 @@ function setupSmilesSearch() {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const smiles = input.value.trim();
-    if (!smiles) return;
-    selectCompoundBySmiles(smiles);
+    const raw = input.value.trim();
+    if (!raw) return;
+    selectCompoundByUserInput(raw);
   });
 }
 
