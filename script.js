@@ -8,6 +8,62 @@ function analyze(flags) {
   return { standalone, reagent };
 }
 
+function selectCompound(compound) {
+  selectedCompound = compound;
+  selectedReaction = null;
+  renderCompoundList();
+  renderResults();
+  renderMechanism();
+}
+
+// 예시 화합물 버튼도 검색과 동일하게 analyzeSmiles()로 flags를 계산해, 손으로 정의한
+// COMPOUNDS[].flags와 실제 자동판별 결과가 항상 일치하는지 그대로 검증하며 동작한다.
+function selectCompoundBySmiles(smiles, displayName) {
+  const result = analyzeSmiles(smiles);
+  if (!result) {
+    showSmilesStatus(`"${smiles}"는 올바른 SMILES가 아닙니다.`, true);
+    return;
+  }
+  showSmilesStatus("", false);
+  selectCompound({
+    id: result.canonicalSmiles,
+    name: displayName || result.canonicalSmiles,
+    formula: result.canonicalSmiles,
+    flags: result.flags,
+  });
+}
+
+function showSmilesStatus(text, isError) {
+  const el = document.getElementById("smiles-status");
+  el.textContent = text;
+  el.hidden = !text;
+  el.classList.toggle("smiles-status-error", !!isError);
+}
+
+function setupSmilesSearch() {
+  const form = document.getElementById("smiles-form");
+  const input = document.getElementById("smiles-input");
+  const submit = document.getElementById("smiles-submit");
+
+  showSmilesStatus("RDKit 로딩 중...", false);
+  loadRDKit()
+    .then(() => {
+      input.disabled = false;
+      submit.disabled = false;
+      showSmilesStatus("", false);
+    })
+    .catch(() => {
+      showSmilesStatus("RDKit을 불러오지 못했습니다. 네트워크 연결을 확인하세요.", true);
+    });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const smiles = input.value.trim();
+    if (!smiles) return;
+    selectCompoundBySmiles(smiles);
+  });
+}
+
 function renderCompoundList() {
   const list = document.getElementById("compound-list");
   list.innerHTML = "";
@@ -15,13 +71,7 @@ function renderCompoundList() {
     const btn = document.createElement("button");
     btn.className = "compound-item" + (selectedCompound && selectedCompound.id === c.id ? " selected" : "");
     btn.innerHTML = `<span class="cname">${c.name}</span><span class="cformula">${c.formula}</span>`;
-    btn.addEventListener("click", () => {
-      selectedCompound = c;
-      selectedReaction = null;
-      renderCompoundList();
-      renderResults();
-      renderMechanism();
-    });
+    btn.addEventListener("click", () => selectCompoundBySmiles(c.formula, c.name));
     list.appendChild(btn);
   });
 }
@@ -118,3 +168,4 @@ function renderMechanism() {
 renderCompoundList();
 renderResults();
 renderMechanism();
+setupSmilesSearch();

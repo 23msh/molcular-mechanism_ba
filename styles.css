@@ -79,6 +79,33 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; }
 }
 
 /* ---------- compound picker ---------- */
+.smiles-form { display: flex; gap: 8px; margin-bottom: 10px; }
+.smiles-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font-head);
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--surface);
+}
+.smiles-input:disabled { color: var(--ink-faint); background: var(--bg); }
+.smiles-form button {
+  border: 1px solid var(--accent-standalone);
+  background: var(--accent-standalone);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+.smiles-form button:disabled { border-color: var(--border-strong); background: var(--ink-faint); cursor: not-allowed; }
+.smiles-status { font-size: 12px; color: var(--ink-muted); margin: 0 0 10px; }
+.smiles-status-error { color: var(--accent-reagent); }
 .compound-list { display: flex; flex-direction: column; gap: 8px; }
 .compound-item {
   display: block;
